@@ -1,4 +1,4 @@
-# CS14-Spring15
+# cs14
 Site for CS14
 
 The lab/dis handouts are written in markdown and the static
