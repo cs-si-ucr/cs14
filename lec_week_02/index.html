@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Lecture Week 2 - CS14 SI: Spring 2015</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lecture Week 2";
+    var mkdocs_page_input_path = "lec_week_02.md";
+    var mkdocs_page_url = "/lec_week_02/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CS14 SI: Spring 2015</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lab_week_01/">Lab Week 1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Lecture Week 2</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-2-lists-queues-and-stacks">Lecture 2: Lists, Queues, and Stacks</a></li>
+                
+                    <li><a class="toctree-l4" href="#question-of-the-day">Question of the day!</a></li>
+                
+                    <li><a class="toctree-l4" href="#lists">Lists</a></li>
+                
+                    <li><a class="toctree-l4" href="#singly-linked-lists">Singly-linked Lists</a></li>
+                
+                    <li><a class="toctree-l4" href="#doubly-linked-list">Doubly Linked List</a></li>
+                
+                    <li><a class="toctree-l4" href="#stacks">Stacks</a></li>
+                
+                    <li><a class="toctree-l4" href="#queues">Queues</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CS14 SI: Spring 2015</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Lecture Week 2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lecture-2-lists-queues-and-stacks">Lecture 2: Lists, Queues, and Stacks</h1>
+<h2 id="question-of-the-day">Question of the day!</h2>
+<blockquote>
+<p>How many programmers does it take to change a light bulb?</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>None. That's a hardware problem.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="lists">Lists</h2>
+<p>An <strong>abstract data type (ADT)</strong> is a data type described by pre-defined user operations, such as "insert data at rear," without indicating how each operation is implemented.</p>
+<p>Lists are a common ADT for holding data, with operations like appending a data item, removing a data item, searching and printing. Each item in a list ADT is called a <strong>node</strong>.</p>
+<h2 id="singly-linked-lists">Singly-linked Lists</h2>
+<p>Singly-linked lists is a data structure for implementing a list ADT, where each node has a data and a pointer to the next node. The list structure typically has pointers to the list's first node and last node. The list's first node is called the <strong>head</strong>, and the last node is the <strong>tail</strong>.</p>
+<p><img alt="alt text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png" />
+    The head in this case would be the node with value 12 and the tail would be the node with value 37</p>
+<p>In order to implement a Linked List, you must define the structure
+for an individual node. </p>
+<p>For a singly-linked list of integers, it may look something like:</p>
+<pre><code class="cpp">struct IntNode{
+    int val;
+    IntNode* next;
+};
+</code></pre>
+
+<p>In order to implement the Linked List, we store the head of the list,
+which is a pointer to a <code>IntNode</code>. We also implement methods that
+insert/remove elements from the list
+e.g.</p>
+<pre><code class="cpp">class IntLinkedList {
+    public:
+        void push_front(int val);
+        // ...
+    private:
+        IntNode* head;
+    IntNode* tail;
+};
+</code></pre>
+
+<h2 id="doubly-linked-list">Doubly Linked List</h2>
+<p>In a doubly linked list, each node contains three parts:</p>
+<ul>
+<li>Data</li>
+<li>Pointer to the next node</li>
+<li>Pointer to the previous node</li>
+</ul>
+<p><img alt="alt text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png" /></p>
+<p>In this case, our new struct may look something like:</p>
+<pre><code class="cpp">struct IntNode{
+    int val;
+    IntNode* next;
+    IntNode* previous;
+};
+</code></pre>
+
+<h2 id="stacks">Stacks</h2>
+<p>Stacks are LIFO (last in, first out) data structures.
+You've already encountered stacks before.
+Recursion takes advantage of the function call stack.</p>
+<p>Here's a small demo of how stacks work:</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;stack&gt;
+
+using namespace std;
+
+int main() {
+  stack&lt;int&gt; s;
+  for(unsigned i = 0; i &lt; 6; ++i) {
+    cout &lt;&lt; &quot;Pushing i (&quot; &lt;&lt; i &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+    s.push(i);
+  }
+
+  while (!s.empty()) {
+    cout &lt;&lt; &quot;Popping (&quot; &lt;&lt; s.top() &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+    s.pop();
+  }
+
+  if (s.empty()) cout &lt;&lt; &quot;stack is empty&quot; &lt;&lt; endl;
+
+  return 0;
+}
+</code></pre>
+
+<p>Try running that and see what is output.
+Go ahead. I'll wait.</p>
+<p>Were you surprised by the output?</p>
+<h2 id="queues">Queues</h2>
+<blockquote>
+<p><em>The word queue is pronounced "Q" because all the other letters are waiting their turn...</em></p>
+</blockquote>
+<p>Queues are FIFO (first in, first out) data structures.
+They're structured similarly to checkout lines at the grocery store;
+Whoever gets in line first gets serviced first.</p>
+<p>Here's a small demo of how queues work:</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;queue&gt;
+
+using namespace std;
+
+int main() {
+  queue&lt;int&gt; q;
+  for(unsigned i = 0; i &lt; 6; ++i) {
+    cout &lt;&lt; &quot;Pushing i (&quot; &lt;&lt; i &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+    q.push(i);
+  }
+
+  while (!q.empty()) {
+    cout &lt;&lt; &quot;Popping (&quot; &lt;&lt; q.front() &lt;&lt; &quot;)&quot; &lt;&lt; endl;
+    q.pop();
+  }
+
+  if (q.empty()) cout &lt;&lt; &quot;queue is empty&quot; &lt;&lt; endl;
+
+  return 0;
+}
+</code></pre>
+
+<p>Run it!!</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../lab_week_01/" class="btn btn-neutral" title="Lab Week 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../lab_week_01/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
