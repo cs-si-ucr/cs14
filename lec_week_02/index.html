@@ -78,10 +78,17 @@
                     <li><a class="toctree-l4" href="#doubly-linked-list">Doubly Linked List</a></li>
                 
             
-                <li class="toctree-l3"><a href="#fibonacci-exercise">Fibonacci Exercise</a></li>
+                <li class="toctree-l3"><a href="#exercise-1-fibonacci-exercise">Exercise 1: Fibonacci Exercise</a></li>
                 
             
-                <li class="toctree-l3"><a href="#palindrome-exercise">Palindrome Exercise</a></li>
+                <li class="toctree-l3"><a href="#exercise-2-palindrome-exercise">Exercise 2: Palindrome Exercise</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercise-3-animation">Exercise 3: Animation!</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-get-the-code">How to get the code</a></li>
+                
+                    <li><a class="toctree-l4" href="#compiling">Compiling</a></li>
                 
             
             </ul>
@@ -186,7 +193,7 @@ e.g.</p>
 };
 </code></pre>
 
-<h1 id="fibonacci-exercise">Fibonacci Exercise</h1>
+<h1 id="exercise-1-fibonacci-exercise">Exercise 1: Fibonacci Exercise</h1>
 <p>Fn = Fn-1 + Fn-2</p>
 <p>F0 = 0, F1 = 1</p>
 <p>Write a program that will calculate a specified fibonacci number using the <code>std::list data</code>
@@ -200,7 +207,7 @@ structure. Think about how to use a list to store values of the formula above.</
 <li>Which Fibonacci number to calculate: <font color='red'>10</font></li>
 <li>10th Fibonacci number: <font color='red'>55</font></li>
 </ul>
-<h1 id="palindrome-exercise">Palindrome Exercise</h1>
+<h1 id="exercise-2-palindrome-exercise">Exercise 2: Palindrome Exercise</h1>
 <p>Write a program that will test to see if a specific word is a palindrome using the std::list
 data structure.</p>
 <ul>
@@ -213,6 +220,25 @@ data structure.</p>
 <li><font color='red'>tacocats</font> is not a palindrome.</li>
 </ul>
 <p><em>Key functions to incorporate: back(), pop_back()</em></p>
+<h1 id="exercise-3-animation">Exercise 3: Animation!</h1>
+<p>We've written the foundation for a program to create animations in the terminal, all you have to do is connect the dots!</p>
+<p>At the moment, the program will push encrypted characters that need to be displayed into a queue, but those characters still need to be put into <code>cout</code>!</p>
+<p><em>Note, since we're giving you a precompiled file, you're going to have to use C9 for this exercise</em></p>
+<h2 id="how-to-get-the-code">How to get the code</h2>
+<p>In your C9 terminal, run the following in the directory where you want the code</p>
+<pre><code>git clone https://github.com/scohe001/Animations
+</code></pre>
+<p>You'll notice you now have a <code>main</code>, an <code>Animator</code> class and a couple animation files (don't look at them yet, it'll ruin the surprise!<sup><a href="#myfootnote1">*</a></sup>).</p>
+<p>We've already completely implemented the <code>Animator</code> class for you and compiled it, so all you'll have to do is finish off the <code>main</code> skeleton! The details for doing so are in the comments, so don't just delete them!</p>
+<h2 id="compiling">Compiling</h2>
+<p>Since we're using C++11 features and threading, you'll have to compile with the following:</p>
+<pre><code>g++ -std=c++11 -pthread -Wall main.cpp animation.o
+</code></pre>
+<p>After you get your main up and running, test it out with all four animations! I'd highly suggest starting with the Eyes animation, as it's the simplest by far of all of them so it'll be easier to debug. Once you get one animation working, they should all work!</p>
+<p>Once you have all of the animations working, delete <code>animation.o</code> and use the skeleton <code>animation.cpp</code> we've given you to complete the <code>Animation</code> class! Recompiling the <code>Animation</code> class should look like the following:</p>
+<pre><code>g++ -std=c++11 -pthread -c animation.cpp
+</code></pre>
+<p><em><a name="myfootnote1">*</a> Since you're all CS majors I'm sure the lot of you have already looked at them &gt;.&gt;</em></p>
               
             </div>
           </div>

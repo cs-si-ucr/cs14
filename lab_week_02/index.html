@@ -283,11 +283,11 @@ int main() {
 <h2 id="exercise-1-reverse-polish-notation">Exercise 1 - Reverse Polish Notation</h2>
 <p><strong>Reverse Polish notation (RPN)</strong> is a mathematical notation in which every operator follows all of its operands. It is also known as postfix notation and does not need any parentheses as long as each operator has a fixed number of operands.</p>
 <p>In reverse Polish notation the operators follow their operands; for instance, to add 3 and 4, one would write "3 4 +" rather than "3 + 4". If there are multiple operations, the operator is given immediately after its second operand; so the expression written "3 − 4 + 5" in conventional notation would be written "3 4 − 5 +" in RPN: 4 is first subtracted from 3, then 5 added to it.</p>
-<p>An advantage of RPN is that it removes the need for parentheses that are required by infix. While "3 − 4 × 5" can also be written "3 − (4 × 5)", that means something quite different from "(3 − 4) × 5". In postfix, the former could be written "3 4 5 × −", which unambiguously means "3 (4 5 ×) −" which reduces to "3 20 −"; the latter could be written "3 4 − 5 ×" (or 5 3 4 − ×, if keeping similar formatting), which unambiguously means "(3 4 −) 5 ×".</p>
+<p>An advantage of RPN is that it removes the need for parentheses that are required by infix. While "3 − 4 * 5" can also be written "3 − (4 * 5)", that means something quite different from "(3 − 4) * 5". In postfix, the former could be written "3 4 5 * −", which unambiguously means "3 (4 5 * ) −" which reduces to "3 20 −"; the latter could be written "3 4 − 5 * " (or 5 3 4 − * , if keeping similar formatting), which unambiguously means "(3 4 −) 5 * ".</p>
 <p>Your task is to implement a reverse polish notation calculator that reads in an equation and calculates the result.</p>
 <p>Example:</p>
 <ul>
-<li>Input: 5 1 2 + 4 x + 3 -</li>
+<li>Input: 5 1 2 + 4 * + 3 -</li>
 <li>Output: 14</li>
 </ul>
 <p>For this exercise, implement the calculator using your choice of list.</p>
