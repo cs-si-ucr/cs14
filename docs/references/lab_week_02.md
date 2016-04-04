@@ -14,6 +14,9 @@ Lab 2: The Standard Template Library
 
 [STL-video]:https://channel9.msdn.com/Series/C9-Lectures-Stephan-T-Lavavej-Standard-Template-Library-STL-/C9-Lectures-Introduction-to-STL-with-Stephan-T-Lavavej  "Lecture that introduces STL"
 
+Like templates, you've already been using a small portion of the Standard Template Library.
+
+Namely, you're already well-acquainted with the contiguous container [`std::vector`][std-vector] and maybe even [`std::list`][std-list].
 
 The Standard Template Library, or the **STL** for short, is
 a library that provides many reusable (or generic) algorithms and data structures that programmers would otherwise have to reimplement themselves.
