@@ -104,3 +104,39 @@ Example:
 * <font color='red'>tacocats</font> is not a palindrome.
 
 _Key functions to incorporate: back(), pop_back()_
+
+Animation!
+==========
+
+We've written the foundation for a program to create animations in the terminal, all you have to do is connect the dots!
+
+At the moment, the program will push encrypted characters that need to be displayed into a queue, but those characters still need to be put into `cout`!
+
+_Note, since we're giving you a precompiled file, you're going to have to use C9 for this exercise_
+
+How to get the code
+-------------------
+In your C9 terminal, run the following in the directory where you want the code
+
+	git clone https://github.com/scohe001/Animations
+
+You'll notice you now have a `main`, an `Animator` class and a couple animation files (don't look at them yet, it'll ruin the surprise!<sup>[*](#myfootnote1)</sup>).
+
+We've already completely implemented the `Animator` class for you and compiled it, so all you'll have to do is finish off the `main` skeleton! The details for doing so are in the comments, so don't just delete them!
+
+Compiling
+---------
+
+Since we're using C++11 features and threading, you'll have to compile with the following:
+
+	g++ -std=c++11 -pthread -Wall main.cpp animation.o
+
+After you get your main up and running, test it out with all four animations! I'd highly suggest starting with the Eyes animation, as it's the simplest by far of all of them so it'll be easier to debug. Once you get one animation working, they should all work!
+
+Once you have all of the animations working, delete `animation.o` and use the skeleton `animation.cpp` we've given you to complete the `Animation` class! Recompiling the `Animation` class should look like the following:
+
+	g++ -std=c++11 -pthread -c animation.cpp
+
+
+
+_<a name="myfootnote1">*</a> Since you're all CS majors I'm sure the lot of you have already looked at them >.>_
