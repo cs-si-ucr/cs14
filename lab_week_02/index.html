@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Lab Week 2 - CS14 SI: Spring 2015</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lab Week 2";
+    var mkdocs_page_input_path = "lab_week_02.md";
+    var mkdocs_page_url = "/lab_week_02/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CS14 SI: Spring 2015</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_02/">Lecture Week 2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Lab Week 2</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lab-2-the-standard-template-library">Lab 2: The Standard Template Library</a></li>
+                
+                    <li><a class="toctree-l4" href="#iterators">Iterators</a></li>
+                
+                    <li><a class="toctree-l4" href="#function-objects">Function Objects</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-1">Exercise 1</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-2">Exercise 2</a></li>
+                
+                    <li><a class="toctree-l4" href="#stretch-goal-exercise">Stretch-goal Exercise</a></li>
+                
+                    <li><a class="toctree-l4" href="#cool-references">Cool References</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CS14 SI: Spring 2015</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Lab Week 2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lab-2-the-standard-template-library">Lab 2: The Standard Template Library</h1>
+<p>The Standard Template Library, or the <strong>STL</strong> for short, is
+a library that provides many reusable (or generic) algorithms and data structures that programmers would otherwise have to reimplement themselves.</p>
+<p>Some of these algorithms range from simple algorithms such
+as <a href="http://en.cppreference.com/w/cpp/algorithm/swap" title="cppreference for std::swap"><code>std::swap</code></a> to the more complex <a href="http://en.cppreference.com/w/cpp/algorithm/sort" title="cppreference for std::sort"><code>std::sort</code></a>.</p>
+<p>The motivation for learning and mastering the STL is to write <a href="http://www.bfilipek.com/2014/12/top-5-beautiful-c-std-algorithms.html" title="Cool examples that showcase use of the STL">code that is clear and concise</a>.</p>
+<h2 id="iterators">Iterators</h2>
+<p>Probably the most important and inescapable concept in the
+STL is the types we call iterators.</p>
+<p>Iterators are used to generalize the iterator over an STL container (or your own containers that implement iterators).</p>
+<p>The easiest way to think about iterators is to think of them as fancy pointers (again, this conceptual model works for 80% of use cases - it's not entirely correct).</p>
+<p><em>"Enough talk, show me the code!"</em> Here's how you can iterate through a vector using iterators!</p>
+<pre><code class="cpp">vector&lt;int&gt; vec {1, 2, 3};
+vector&lt;int&gt;::iterator vec_iterator = vec.begin();
+
+// go through the vector until we hit vec.end()
+while(vec_iterator != vec.end()) {
+    cout &lt;&lt; *vec_iterator &lt;&lt; ' ';
+    vec_iterator++; //move the iterator up one
+}
+// Outputs &quot;1 2 3 &quot;
+</code></pre>
+
+<p>Note the <code>vec.begin()</code> and <code>vec.end()</code> calls in the above
+code block. Both of these return an iterator to different
+positions in the vector container. Both also return an
+iterator of type <code>vector&lt;int&gt;::iterator</code>.</p>
+<p><code>vec.begin()</code> returns an iterator to beginning of <code>vec</code>. However, <code>vec.end()</code> returns an iterator to the element <strong>one past</strong> the last element.</p>
+<p>This is pictured below (image from en.cppreference.com)
+<img alt="vector::begin and vector::end diagram" src="http://upload.cppreference.com/mwiki/images/1/1b/range-begin-end.svg" /></p>
+<p>A lot of algorithms in the STL, including <code>std::sort</code>
+expect iterators as arguments. <a href="http://en.cppreference.com/w/cpp/iterator#Iterator_categories">(and usually specific types of iterators)</a></p>
+<p>One of the function prototypes for <a href="http://en.cppreference.com/w/cpp/algorithm/sort" title="cppreference for std::sort"><code>std::sort</code></a> looks
+something like this:</p>
+<pre><code class="cpp">template&lt;typename RandomIt&gt;
+void sort(Iterator first, Iterator last);
+</code></pre>
+
+<p>As long as we provide the sort function valid iterators, it will sort
+the elements within the range [first, last).</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int main() {
+    vector&lt;int&gt; vec {42, 8, 3};
+
+    // sort all of the elements in vec in ascending order
+    sort(vec.begin(), vec.end());
+
+    /*
+        We can use auto to omit the type
+        on the left-hand side in C++11!
+
+        Also, this is a way to iterate through a
+        vector using iterators with a for-loop!
+    */
+    for(auto vec_iter = vec.begin(); vec_iter != vec.end(); vec_iter++){
+        cout &lt;&lt; *vec_iter &lt;&lt; ' ';
+    }
+}
+</code></pre>
+
+<p>`
+<strong>Try it yourself - before compiling guess what the above program outputs.</strong></p>
+<p>That's cool and all, but what if we want to sort the
+container in descending order: function objects come
+to the rescue!</p>
+<h2 id="function-objects">Function Objects</h2>
+<p>Back in CS12, you learned that you can <strong>overload</strong>
+special operators while defining classes. The prototype
+of a method of a rational number class which overloads the
+<code>+</code> operator may look like this (assume the <code>gcd</code> function is defined):</p>
+<pre><code class="cpp">bool operator+(const Rational &amp; other) {
+    int new_denom = gcd(this -&gt; denom, other.denom);
+    int this_multipler = new_denom/(this -&gt; denom);
+    int other_multipler = new_denom/(other.denom);
+    int new_numer = this_multipler  * this -&gt; numer +
+                    other_multipler * other.numer;
+    return Rational(new_numer, new_denom);
+}
+</code></pre>
+
+<p>You can also overload the function call operator by
+defining a function with the function name <code>operator()</code>.</p>
+<p>e.g.</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Counter {
+    public:
+        Counter() :count(0) {}
+        Counter(int count) : count(count) {}
+        void operator() () {
+            ++count;
+        }
+        int get_count() {
+            return count;
+        }
+    private:
+        int count;
+};
+int main() {
+    Counter count;
+    count();
+    count();
+    cout &lt;&lt; count.get_count() &lt;&lt; endl;
+}
+</code></pre>
+
+<p><strong>Try it yourself - before compiling guess what the above program outputs.</strong></p>
+<p>Overloading the function call operator automatically makes the
+class a "function object". This becomes useful in a number of
+STL algorithms. Some of the algorithms include <a href="http://en.cppreference.com/w/cpp/algorithm/sort" title="cppreference for std::sort"><code>std::sort</code></a>
+and <a href="http://en.cppreference.com/w/cpp/algorithm/copy" title="cppreference for std::copy_if"><code>std::copy_if</code></a>. The most common types of
+function objects that these algorithms accept as input are
+<a href="http://en.cppreference.com/w/cpp/concept/Compare" title="cppreference for the C++ concept of an object of type Compare">comparison function objects</a> which return
+true if the first argument is <em>considered</em> less than the second and
+a unary predicate which returns true if it satisfies some condition.</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;vector&gt;
+#include &lt;list&gt;
+using namespace std;
+
+class SortGreater {
+    public:
+        bool operator() (const int &amp; a, const int &amp; b ) const {
+            return a &gt; b;
+        }
+};
+
+class IsEven {
+    public:
+        bool operator() (const int &amp; x) const {
+            return x % 2 == 0;
+        }
+};
+
+int main() {
+    vector&lt;int&gt; from_vector {1, 2, 3, 4};
+    list&lt;int&gt; to_list(2);
+
+    sort(from_vector.begin(), from_vector.end(), SortGreater());
+    for (int elem : from_vector) {
+        cout &lt;&lt; elem &lt;&lt; ' ';
+    }
+    cout &lt;&lt; endl;
+
+    copy_if(from_vector.begin(), from_vector.end(), to_list.begin(), IsEven());
+
+    for (int elem : to_list) {
+        cout &lt;&lt; elem &lt;&lt; ' ';
+    }
+}
+</code></pre>
+
+<p><strong>Try it yourself - before compiling guess what the above program outputs.</strong></p>
+<h2 id="exercise-1">Exercise 1</h2>
+<p>Implement your own STL-like reverse function, the reverse function
+will have the following prototype:</p>
+<pre><code class="cpp">template &lt;typename BidirectionalIter&gt;
+void my_reverse(BidirectionalIter first, BidirectionalIter last)
+</code></pre>
+
+<p>The function should reverse a portion of a container given two Bidirectional iterators (iterators you can move forward and backward).
+The elements within the range [first, last) are reversed.</p>
+<h2 id="exercise-2">Exercise 2</h2>
+<p>Implement rotate as an STL-like function. The rotate function
+will have the following prototype:</p>
+<pre><code class="cpp">template &lt;typename BidirectionalIter&gt;
+void my_rotate(BidirectionalIter first, BidirectionalIter n_first,
+               BidirectionalIter last)
+</code></pre>
+
+<p>The function should rotate the container given three Bidirectional
+iterators: first, n_first and last. The rotate should make n_first
+the first element in the container and n_first-1 the last element
+in the container. The new order should be [n_first, ..., last,  first, ... n_first-1]</p>
+<p><em>Super Hint: The reverse function you just implement should really
+come in handy!</em></p>
+<h2 id="stretch-goal-exercise">Stretch-goal Exercise</h2>
+<p>Implement mergesort as an STL-like function. The mergesort function
+will have the following prototype:</p>
+<pre><code class="cpp">template &lt;typename BidirectionalIter&gt;
+void mergesort(BidirectionalIter first, BidirectionalIter last)
+</code></pre>
+
+<p>Given two Bidirectional Iterators, sort the container's elements
+within the range [first, last).</p>
+<p><em>Ultra-hint: <a href="http://en.cppreference.com/w/cpp/algorithm/inplace_merge" title="cppreference for std::inplace_merge"><code>std::inplace_merge</code></a> and <a href="http://en.cppreference.com/w/cpp/iterator/distance" title="cppreference for std::distance"><code>std::distance</code></a> are lifesavers here!</em></p>
+<h2 id="cool-references">Cool References</h2>
+<p><a href="https://channel9.msdn.com/Series/C9-Lectures-Stephan-T-Lavavej-Standard-Template-Library-STL-/C9-Lectures-Introduction-to-STL-with-Stephan-T-Lavavej" title="Lecture that introduces STL">Standard Template Library Video Series by Stephan T. Lavaej at Microsoft</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../lec_week_02/" class="btn btn-neutral" title="Lecture Week 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../lec_week_02/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
