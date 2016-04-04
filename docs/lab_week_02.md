@@ -195,50 +195,25 @@ int main() {
 ```
 **Try it yourself - before compiling guess what the above program outputs.**
 
-Exercise 1
+Exercise 1 - Reverse Polish Notation
 ----------
-Implement your own STL-like reverse function, the reverse function
-will have the following prototype:
+**Reverse Polish notation (RPN)** is a mathematical notation in which every operator follows all of its operands. It is also known as postfix notation and does not need any parentheses as long as each operator has a fixed number of operands.
 
-```cpp
-template <typename BidirectionalIter>
-void my_reverse(BidirectionalIter first, BidirectionalIter last)
-```
-The function should reverse a portion of a container given two Bidirectional iterators (iterators you can move forward and backward).
-The elements within the range [first, last) are reversed.
 
-Exercise 2
-----------
-Implement rotate as an STL-like function. The rotate function
-will have the following prototype:
+In reverse Polish notation the operators follow their operands; for instance, to add 3 and 4, one would write "3 4 +" rather than "3 + 4". If there are multiple operations, the operator is given immediately after its second operand; so the expression written "3 − 4 + 5" in conventional notation would be written "3 4 − 5 +" in RPN: 4 is first subtracted from 3, then 5 added to it.
 
-```cpp
-template <typename BidirectionalIter>
-void my_rotate(BidirectionalIter first, BidirectionalIter n_first,
-               BidirectionalIter last)
-```
 
-The function should rotate the container given three Bidirectional
-iterators: first, n_first and last. The rotate should make n_first
-the first element in the container and n_first-1 the last element
-in the container. The new order should be [n_first, ..., last,  first, ... n_first-1]
+An advantage of RPN is that it removes the need for parentheses that are required by infix. While "3 − 4 × 5" can also be written "3 − (4 × 5)", that means something quite different from "(3 − 4) × 5". In postfix, the former could be written "3 4 5 × −", which unambiguously means "3 (4 5 ×) −" which reduces to "3 20 −"; the latter could be written "3 4 − 5 ×" (or 5 3 4 − ×, if keeping similar formatting), which unambiguously means "(3 4 −) 5 ×".
 
-*Super Hint: The reverse function you just implement should really
-come in handy!*
 
-Stretch-goal Exercise
----------------------
-Implement mergesort as an STL-like function. The mergesort function
-will have the following prototype:
+Your task is to implement a reverse polish notation calculator that reads in an equation and calculates the result.
 
-```cpp
-template <typename BidirectionalIter>
-void mergesort(BidirectionalIter first, BidirectionalIter last)
-```
-Given two Bidirectional Iterators, sort the container's elements
-within the range [first, last).
+Example:
 
-*Ultra-hint: [`std::inplace_merge`][std-inplace_merge] and [`std::distance`][std-distance] are lifesavers here!*
+* Input: 5 1 2 + 4 x + 3 -
+* Output: 14
+
+For this exercise, implement the calculator using your choice of list.
 
 Cool References
 ---------------
