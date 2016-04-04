@@ -67,7 +67,7 @@ struct IntNode{
 ```
 
 
-Fibonacci Exercise
+Exercise 1: Fibonacci Exercise
 ====================
 
 Fn = Fn-1 + Fn-2
@@ -88,7 +88,7 @@ Example:
 * 10th Fibonacci number: <font color='red'>55</font>
 
 
-Palindrome Exercise
+Exercise 2: Palindrome Exercise
 ====================
 Write a program that will test to see if a specific word is a palindrome using the std::list
 data structure.
@@ -105,7 +105,7 @@ Example:
 
 _Key functions to incorporate: back(), pop_back()_
 
-Animation!
+Exercise 3: Animation!
 ==========
 
 We've written the foundation for a program to create animations in the terminal, all you have to do is connect the dots!
