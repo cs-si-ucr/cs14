@@ -1,13 +1,11 @@
-Lecture 3: Stacks and Queues
+Stacks and Queues
 ==============================
-
-
 
 
 Stacks
 ------
 
-Stacks are LIFO (last in, first out) data structures.
+Stacks are **LIFO** (last in, first out) data structures.
 You've already encountered stacks before.
 Recursion takes advantage of the function call stack.
 
@@ -42,11 +40,25 @@ Go ahead. I'll wait.
 Were you surprised by the output?
 
 
+Here are some commonly used stack ADT operations:
+
+| Member function                 | Description                 |
+| ------------------------------- | :---------------------:     |
+| **push(element)**;              | Insert element              |
+| **pop(element)**;               | Remove top element          |
+| **top()**;                      | Access the top of the stack |
+| **size()**;                     | Returns the size            |
+| **empty()**;                    | Returns true if the container's size is 0, false otherwise  |
+
+
+
+**Quick Exercise: Remember how you implemented a Reverse Polish Notation calculator using linked lists from Lab Week 2? Well if you completed it you may have noticed that the typical algorithm uses properties of a stack. Now that you have learned how stacks work, try implementing a RPN with a stack!**
+
 
 Queues
 ------
 
->_The word queue is pronounced "Q" because all the other letters are waiting their turn..._
+>_The word queue is pronounced "Q" because all the other letters are waiting their turn to be pronounced..._
 
 Queues are FIFO (first in, first out) data structures.
 They're structured similarly to checkout lines at the grocery store;
@@ -79,3 +91,16 @@ int main() {
 ```
 
 Run it!!
+
+
+
+
+Here are some commonly used queue ADT operations:
+
+| Member function                 | Description                 |
+| ------------------------------- | :---------------------:     |
+| **push(element)**;              | Insert element              |
+| **pop(element)**;               | Remove top element          |
+| **top()**;                      | Access the top of the stack |
+| **size()**;                     | Returns the size            |
+| **empty()**;                    | Returns true if the container's size is 0, false otherwise  
