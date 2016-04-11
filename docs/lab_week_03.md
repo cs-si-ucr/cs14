@@ -1,173 +1,112 @@
-Lab 3: Stacks and Queues
+Lab 3: Templates and Exceptions
 ===================================
-Stacks
-------
 
-Stacks are LIFO (last in, first out) data structures.
-You've already encountered stacks before.
-Recursion takes advantage of the function call stack.
-
-Here's a small demo of how stacks work:
-```cpp
-#include <iostream>
-#include <stack>
-
-using namespace std;
-
-int main() {
-  stack<int> s;
-  for(unsigned i = 0; i < 6; ++i) {
-    cout << "Pushing i (" << i << ")" << endl;
-    s.push(i);
-  }
-
-  while (!s.empty()) {
-    cout << "Popping (" << s.top() << ")" << endl;
-    s.pop();
-  }
-  
-  if (s.empty()) cout << "stack is empty" << endl;
-
-  return 0;
-}
-```
-
-Try running that and see what is output.
-Go ahead. I'll wait.
-
-Were you surprised by the output?
-
-Queues
-------
-
-Queues are FIFO (first in, first out) data structures.
-They're structured similarly to checkout lines at the grocery store;
-Whoever gets in line first gets serviced first.
-
-Here's a small demo of how queues work:
-
-```cpp
-#include <iostream>
-#include <queue>
-
-using namespace std;
-
-int main() {
-  queue<int> q;
-  for(unsigned i = 0; i < 6; ++i) {
-    cout << "Pushing i (" << i << ")" << endl;
-    q.push(i);
-  }
-
-  while (!q.empty()) {
-    cout << "Popping (" << q.front() << ")" << endl;
-    q.pop();
-  }
-  
-  if (q.empty()) cout << "queue is empty" << endl;
-
-  return 0;
-}
-```
-
-Run it!!
-
-Exercise 1
+Exercise 1 - Queue with two Stacks
 ----------
-Implement your own ``stack`` and ``queue``!
 
-The ``stack`` should have the following public members:
+Your task is to implement a class called `Queue` using two stacks `std::stack`.
+
+Public Methods
 ```cpp
-template <typename T>
-class myStack {
-  public:
-    void push(T);       // adds an element to the top of the stack
-    T top() const;      // gets the element at the top of the stack
-    bool pop();         // returns false if failed
-    bool empty() const; // returned true if empty
+Queue(int c = 256) {cap = c; sz = 0}
+void printAll()
+void push_q(data_type t)
+data_type pop_q() // removes and returns the top element
+bool isEmpty() 
+```
+
+Private Data Fields
+```cpp
+stack<data_type> s1;
+stack<data_type> s2;
+unsigned sz;  // the number of elements currently being used in Queue
+unsigned cap; // the size of Queue
+```
+
+Exercise 1.1 - Template Queue
+----------
+
+Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types.
+`Queue` should now become:
+```cpp
+template<typename T>
+class Queue
+{
+	public:
+	    // ...	
+	private: 
+        // ...
 };
 ```
-
-The ``queue`` should have the following public members:
+and `printAll()` should now become:
 ```cpp
-template <typename T>
-class myQueue {
-  public:
-    void push(T);       // adds an element to the back of the queue
-    T front() const;    // gets the element at the front of the queue
-    bool pop();         // returns false if failed
-    bool empty() const; // returned true if empty
-};
+template<typename T>
+void Queue<T>::printAll()
+{
+    // ...
+}
 ```
-
-**Important**: Use a ``deque``, ``list``, or ``vector`` to do all of the heavy lifting for you.
-In other words, if you're using arrays and nodes to solve this, you're doing too much work.
-
-Exercise 2
+Exercise 1.2 - Exceptions
 ----------
-You're all probably able to recite the recursive factorial function in your sleep:
+
+Add an exception handler that throws a `runtime_error` object in the `pop_q()` and `push_q()` function that is caught and handled in the main program. 
+Determine what conditions in `pop_q()` and `push_q` would cause an exception to be thrown.
+When the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. 
+
+`main` should look like the following:
 ```cpp
-unsigned long fact(unsigned long n) {
-  if (n < 2) return 1;
-  return n * fact(n - 1);
-}
-```
-Write a non-recursive factorial function that takes advantage of ``stack`` similarly to how recursion works.
-
-Stretch-goal Exercise 1
------------------------
-Make a ``queue`` using two stacks!
-
-Stretch-goal Exercise 2
------------------------
-Make a new class ``minStack`` that has the same efficiency as a ``stack`` for ``push`` and ``pop``, as well as constant lookup for the minimum element in the stack.
-
-In other words, I should be able to do this all in constant time:
-
-```cpp
-int main() {
-  minStack<int> ms;
-  ms.push(3);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(1);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(4);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(1);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(5);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(9);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(2);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-  ms.push(6);
-  cout << "min: " << ms.min() << "(pushed " << ms.top() << ")" << endl;
-
-  while (!ms.empty()) {
-    int temp = ms.top();
-    ms.pop();
-    cout << "min: " << ms.min() << "(popped " << temp << ")" << endl;
-  }
-
-  return 0;
+int main()
+{
+  	string s = "abcde";
+    Queue<char> q(s.size());
+    try 
+    {
+        // ...
+    }
+    catch ( ... )
+    {
+       // ...
+    }
+    
+    return 0;
 }
 ```
 
-Prototype:
+Example
+----------
+Exceptions are not implemented in this example.
+
 ```cpp
-template <typename T>
-class minStack() {
-  public:
-    void push(T);       // adds an element to the top of the stack
-    T top() const;      // gets the element at the top of the stack
-    T min() const;      // gets minimum element
-    bool pop();         // returns false if failed
-    bool empty() const; // returned true if empty
+int main()
+{
+	string s = "abcde";
+	Queue<char> q(s.size());
+	for(unsigned i = 0; i < s.size(); ++i)
+	{
+		q.push_q(s.at(i));
+	}
+	q.printAll();
+
+	for(unsigned i = 0; i < 3; ++i)
+	{
+		q.pop_q();
+		q.printAll();
+	}
+	q.push_q('x');
+	q.printAll();
+	q.push_q('y');
+	q.printAll();
+    
+    return 0;
 }
 ```
-(Hint: you can use whatever internal data type you'd like)
 
-(**Hint:** use two stacks)
-
-
+Output (first element is the top element): 
+```cpp
+a b c d e 
+b c d e 
+c d e 
+d e 
+d e x 
+d e x y 
+```
