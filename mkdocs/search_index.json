@@ -209,6 +209,96 @@
             "location": "/lab_week_03/#example", 
             "text": "Exceptions are not implemented in this example.  int main()\n{\n    string s =  abcde ;\n    Queue char  q(s.size());\n    for(unsigned i = 0; i   s.size(); ++i)\n    {\n        q.push_q(s.at(i));\n    }\n    q.printAll();\n\n    for(unsigned i = 0; i   3; ++i)\n    {\n        q.pop_q();\n        q.printAll();\n    }\n    q.push_q('x');\n    q.printAll();\n    q.push_q('y');\n    q.printAll();\n\n    return 0;\n}  Output (first element is the top element):   a b c d e \nb c d e \nc d e \nd e \nd e x \nd e x y", 
             "title": "Example"
+        }, 
+        {
+            "location": "/lab_week_04/", 
+            "text": "Lab 4: Trees\n\n\nExercise 1 - Binary Search Trees\n\n\nToday we will be working on implementing a BST. \n\n\nWe've written the foundation for a program to create a Tree, so all you have to do fill in the remaining function implementations!\n\n\nNote, since we're giving you a precompiled file, you're going to have to use C9 for this exercise\n\n\nHow to get the code\n\n\nIn your C9 terminal, run the following in the directory where you want the code\n\n\ngit clone https://github.com/scohe001/Tree\n\n\n\nYou'll notice you now have a \nmain\n, and a \nTree\n class.\n\n\nWe've already completed most of the implementation of the \nTree\n class for you. The details for doing the blanks so are in the comments, so don't just delete them!\n\n\nCompiling\n\n\nSince we're using C++11 features, you'll have to compile with the following:\n\n\ng++ -std=c++11 -Wall main.cpp Tree.cpp\n\n\n\nPart 1: Printing the tree\n\n\nImplement the print recursive function to print all of the values of the tree in order.\n\n\nTree test = {5, 2, 7, 3, 8, 3, 7};\nprint(\nPrinting!\n, MAGENTA);\ncout \n endl;\ntest.print();\n\n\n\n\nThe output should look like the following:\n\n\nPrinting!\n2 3 5 7 8 \n\n\n\n\nPart 2: Maximum and Minimum\n\n\nImplement recurisve min and max functions to find the min and max value in the tree whose root is the parameter.\n\n\nTree test = {5, 2, 7, 3, 8, 3, 7};\nNode* min = test.min();\nNode* max = test.max();\ncout \n \nMin: \n \n min-\nval \n endl \n \nMax: \n \n max-\nval \n endl;\n\n\n\n\nThe output should look like the following:\n\n\nMin: 2\nMax: 8\n\n\n\n\nPart 3: Find\n\n\nImplement the find recursive function to find a value in the tree and return it's node pointer (returning 0 if not found).\n\n\nTree test = {5, 2, 7, 3, 8, 3, 7};\nNode* f1 = test.find(6);\nNode* f2 = test.find(7);\n\n\n\n\nBe sure to notify the user whether or not the value is found. \n\n\nPart 4: Conversion\n\n\nImplement a to_vec function that converts the tree to a vector and returns the sorted vector of tree values.\n\n\nTree test = {5, 2, 7, 3, 8, 3, 7};\nvector\nint\n v = test.to_vector();\n\n\n\n\nThe vector should contain the following values (in this order): 2 3 5 7 8", 
+            "title": "Lab Week 4"
+        }, 
+        {
+            "location": "/lab_week_04/#lab-4-trees", 
+            "text": "", 
+            "title": "Lab 4: Trees"
+        }, 
+        {
+            "location": "/lab_week_04/#exercise-1-binary-search-trees", 
+            "text": "Today we will be working on implementing a BST.   We've written the foundation for a program to create a Tree, so all you have to do fill in the remaining function implementations!  Note, since we're giving you a precompiled file, you're going to have to use C9 for this exercise", 
+            "title": "Exercise 1 - Binary Search Trees"
+        }, 
+        {
+            "location": "/lab_week_04/#how-to-get-the-code", 
+            "text": "In your C9 terminal, run the following in the directory where you want the code  git clone https://github.com/scohe001/Tree  You'll notice you now have a  main , and a  Tree  class.  We've already completed most of the implementation of the  Tree  class for you. The details for doing the blanks so are in the comments, so don't just delete them!", 
+            "title": "How to get the code"
+        }, 
+        {
+            "location": "/lab_week_04/#compiling", 
+            "text": "Since we're using C++11 features, you'll have to compile with the following:  g++ -std=c++11 -Wall main.cpp Tree.cpp", 
+            "title": "Compiling"
+        }, 
+        {
+            "location": "/lab_week_04/#part-1-printing-the-tree", 
+            "text": "Implement the print recursive function to print all of the values of the tree in order.  Tree test = {5, 2, 7, 3, 8, 3, 7};\nprint( Printing! , MAGENTA);\ncout   endl;\ntest.print();  The output should look like the following:  Printing!\n2 3 5 7 8", 
+            "title": "Part 1: Printing the tree"
+        }, 
+        {
+            "location": "/lab_week_04/#part-2-maximum-and-minimum", 
+            "text": "Implement recurisve min and max functions to find the min and max value in the tree whose root is the parameter.  Tree test = {5, 2, 7, 3, 8, 3, 7};\nNode* min = test.min();\nNode* max = test.max();\ncout    Min:     min- val   endl    Max:     max- val   endl;  The output should look like the following:  Min: 2\nMax: 8", 
+            "title": "Part 2: Maximum and Minimum"
+        }, 
+        {
+            "location": "/lab_week_04/#part-3-find", 
+            "text": "Implement the find recursive function to find a value in the tree and return it's node pointer (returning 0 if not found).  Tree test = {5, 2, 7, 3, 8, 3, 7};\nNode* f1 = test.find(6);\nNode* f2 = test.find(7);  Be sure to notify the user whether or not the value is found.", 
+            "title": "Part 3: Find"
+        }, 
+        {
+            "location": "/lab_week_04/#part-4-conversion", 
+            "text": "Implement a to_vec function that converts the tree to a vector and returns the sorted vector of tree values.  Tree test = {5, 2, 7, 3, 8, 3, 7};\nvector int  v = test.to_vector();  The vector should contain the following values (in this order): 2 3 5 7 8", 
+            "title": "Part 4: Conversion"
+        }, 
+        {
+            "location": "/lec_week_04/", 
+            "text": "Binary Search Trees (BST)\n\n\n\n\n\n\n\n\nWhat's a tree?\n\n\nTrees are often easier to deal with recursively (or if you're a mathematician, 'inductively').\nThus, to define a tree recursively, we can say that:\n\n\n\n\nA Tree is a system of \nnodes\n\n\nA node consists of a value and pointers to its children\n\n\nAn \nInternal Node\n is a node with at least one child\n\n\n\n\n\n\nEvery node has a unique \nparent\n\n\nA node with a child is said to be that child's parent\n\n\nA node's \nancestor\n include the node's parent, the parent's parent, ect., up to the tree's root\n\n\nNo node has more than one parent\n\n\n\n\n\n\nThe \nRoot\n of a tree has no parent\n\n\nA Node can have any number of children (including 0)\n\n\n\n\nWhen we put all of these things together, we end up with something looking like:\n\n\n\n\nWhere the numbers in the nodes represent the value at that node, and the arrows represent pointers to children nodes.\n\n\nHere are a few additional terms that are good to know about trees:\n\n\n\n\nThe link from a node to a child is called an \nedge\n.\n\n\nA node's \ndepth\n is the number of edges on the path from the root to the node. The root node thus has depth 0.\n\n\nAll nodes with the same depth form a tree \nlevel\n.\n\n\nA tree's \nheight\n is the largest depth of any node. A tree with just one node has height 0.\n\n\n\n\nWhat's a BST?\n\n\nA Binary Search Tree is exactly like any other tree, except every node has \nexactly\n two children (if there is no child, the node will be a null pointer).\nFurtermore (and more importantly), every child to the left of a node will be less than the node, while every child to the right will be greater.\n\n\nYou'll notice that the picture above is \nNOT\n a BST. Even though each node has two children (we can pretend that there are invisible null children), if we go to the left child of our root, we find a value that is \ngreater\n, breaking our definition.\n\n\nThis\n would be a valid Binary Search Tree:\n\n\n\n\nNotice how \nevery\n number to the left of any node (take 8 for example), is less than the node itself (1, 3, 4, 5, 7). Since this is the case, where will the smallest node be? What about the largest?\n\n\nBST Searching algorithm\n\n\nGiven a key, a search algorithm returns the first node found matching that key, or returns 0 if a matching node is not found. A simple BST search algorithm checks the current node (initially the tree's root), returning that node as a match, else assigning the current node with the left (if key is less) or right (if key is greater) child and repeating. If such a child is 0, the algorithm returns 0 (matching node not found).\n\n\nHere's an example of how powerful a BST can be. If we have a BST and a sorted array, searching for a specific number can be much faster.\n\n\n\n\nBST Insert Algorithm\n\n\nGiven a new node, a BST insert operation inserts the new node in a proper location obeying the BST ordering property. A simple BST insert algorithm compares the new node with the current node (initially the root):\n\n\n\n\nInsert as left child:\n If the new node's key is less than the current node, and the current node's left child is 0, the algorithm assigns that node's left child with the new node.\n\n\nInsert as right child:\n If the new node's key is greater than the current node, and the current node's right child is 0, the algorithm assigns the node's right child with the new node.\n\n\nSearch for insert location:\n If the left (or right) child is not 0, the algorithm assigns the current node with that child and continues searching for a proper insert location.\n\n\n\n\nHere's an animated example of BST insertion:\n\n\n\n\nBST Delete Algorithm\n\n\nDeletion in a BST is a bit tedious as compared to Insertion and searching. This is because the resultant tree after deleting a node from a BST must also be a BST (it should preserve the BST property).\n\n\nGiven a key, a BST remove operation removes the first-found matching node, restructuring the tree to preserve the BST ordering property. The algorithm first searches for a matching node just like the search algorithm. If found (call this node X), the algorithm performs one of the following sub-algorithms:\n\n\n\n\nRemove a leaf node:\n If X has a parent (so X is not the root), the parent's left or right child (whichever points to X) is assigned with 0. Else, if X was the root, the root pointer is assigned with 0, and the BST is now empty.\n\n\n\nRemove an internal node with single child:\n If X has a parent (so X is not the root), the parent's left or right child (whichever points to X) is assigned with X's single child. Else, if X was the root, the root pointer is assigned with X's single child.\n\n\n\nRemove an internal node with two children:\n This case is the hardest. First, the algorithm locates X's successor (the leftmost child of X's right subtree), and copies the successor to X. Then, the algorithm recursively removes the successor from the right subtree.\n\n\n\n\n\nPut it into practice!\n\n\nWe have created a \nsimple implementation of a BST\n for you to use. The class comes with the member functions \nvoid push(T val)\n to add values to the tree, and \nvoid print()\n to print a rough representation of the tree.\n\n\nNOTE:\n\n\nIt is often almost always easier to write Tree functions recursively (as you'll see the push function has been written). However, it \nis\n possible to do all of the following exercises without recursion--you'll just need to be iterating over a stack you're constantly pushing and popping to (as you'll see the print function is doing).", 
+            "title": "Lecture Week 4"
+        }, 
+        {
+            "location": "/lec_week_04/#binary-search-trees-bst", 
+            "text": "", 
+            "title": "Binary Search Trees (BST)"
+        }, 
+        {
+            "location": "/lec_week_04/#whats-a-tree", 
+            "text": "Trees are often easier to deal with recursively (or if you're a mathematician, 'inductively').\nThus, to define a tree recursively, we can say that:   A Tree is a system of  nodes  A node consists of a value and pointers to its children  An  Internal Node  is a node with at least one child    Every node has a unique  parent  A node with a child is said to be that child's parent  A node's  ancestor  include the node's parent, the parent's parent, ect., up to the tree's root  No node has more than one parent    The  Root  of a tree has no parent  A Node can have any number of children (including 0)   When we put all of these things together, we end up with something looking like:   Where the numbers in the nodes represent the value at that node, and the arrows represent pointers to children nodes.  Here are a few additional terms that are good to know about trees:   The link from a node to a child is called an  edge .  A node's  depth  is the number of edges on the path from the root to the node. The root node thus has depth 0.  All nodes with the same depth form a tree  level .  A tree's  height  is the largest depth of any node. A tree with just one node has height 0.", 
+            "title": "What's a tree?"
+        }, 
+        {
+            "location": "/lec_week_04/#whats-a-bst", 
+            "text": "A Binary Search Tree is exactly like any other tree, except every node has  exactly  two children (if there is no child, the node will be a null pointer).\nFurtermore (and more importantly), every child to the left of a node will be less than the node, while every child to the right will be greater.  You'll notice that the picture above is  NOT  a BST. Even though each node has two children (we can pretend that there are invisible null children), if we go to the left child of our root, we find a value that is  greater , breaking our definition.  This  would be a valid Binary Search Tree:   Notice how  every  number to the left of any node (take 8 for example), is less than the node itself (1, 3, 4, 5, 7). Since this is the case, where will the smallest node be? What about the largest?", 
+            "title": "What's a BST?"
+        }, 
+        {
+            "location": "/lec_week_04/#bst-searching-algorithm", 
+            "text": "Given a key, a search algorithm returns the first node found matching that key, or returns 0 if a matching node is not found. A simple BST search algorithm checks the current node (initially the tree's root), returning that node as a match, else assigning the current node with the left (if key is less) or right (if key is greater) child and repeating. If such a child is 0, the algorithm returns 0 (matching node not found).  Here's an example of how powerful a BST can be. If we have a BST and a sorted array, searching for a specific number can be much faster.", 
+            "title": "BST Searching algorithm"
+        }, 
+        {
+            "location": "/lec_week_04/#bst-insert-algorithm", 
+            "text": "Given a new node, a BST insert operation inserts the new node in a proper location obeying the BST ordering property. A simple BST insert algorithm compares the new node with the current node (initially the root):   Insert as left child:  If the new node's key is less than the current node, and the current node's left child is 0, the algorithm assigns that node's left child with the new node.  Insert as right child:  If the new node's key is greater than the current node, and the current node's right child is 0, the algorithm assigns the node's right child with the new node.  Search for insert location:  If the left (or right) child is not 0, the algorithm assigns the current node with that child and continues searching for a proper insert location.   Here's an animated example of BST insertion:", 
+            "title": "BST Insert Algorithm"
+        }, 
+        {
+            "location": "/lec_week_04/#bst-delete-algorithm", 
+            "text": "Deletion in a BST is a bit tedious as compared to Insertion and searching. This is because the resultant tree after deleting a node from a BST must also be a BST (it should preserve the BST property).  Given a key, a BST remove operation removes the first-found matching node, restructuring the tree to preserve the BST ordering property. The algorithm first searches for a matching node just like the search algorithm. If found (call this node X), the algorithm performs one of the following sub-algorithms:   Remove a leaf node:  If X has a parent (so X is not the root), the parent's left or right child (whichever points to X) is assigned with 0. Else, if X was the root, the root pointer is assigned with 0, and the BST is now empty.  Remove an internal node with single child:  If X has a parent (so X is not the root), the parent's left or right child (whichever points to X) is assigned with X's single child. Else, if X was the root, the root pointer is assigned with X's single child.  Remove an internal node with two children:  This case is the hardest. First, the algorithm locates X's successor (the leftmost child of X's right subtree), and copies the successor to X. Then, the algorithm recursively removes the successor from the right subtree.", 
+            "title": "BST Delete Algorithm"
+        }, 
+        {
+            "location": "/lec_week_04/#put-it-into-practice", 
+            "text": "We have created a  simple implementation of a BST  for you to use. The class comes with the member functions  void push(T val)  to add values to the tree, and  void print()  to print a rough representation of the tree.", 
+            "title": "Put it into practice!"
+        }, 
+        {
+            "location": "/lec_week_04/#note", 
+            "text": "It is often almost always easier to write Tree functions recursively (as you'll see the push function has been written). However, it  is  possible to do all of the following exercises without recursion--you'll just need to be iterating over a stack you're constantly pushing and popping to (as you'll see the print function is doing).", 
+            "title": "NOTE:"
         }
     ]
 }

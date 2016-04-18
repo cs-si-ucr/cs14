@@ -8,7 +8,7 @@
   
   
   
-  <title>Lab Week 3 - CS14 SI: Spring 2015</title>
+  <title>Lab Week 4 - CS14 SI: Spring 2015</title>
   
 
   <link rel="shortcut icon" href="../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Lab Week 3";
-    var mkdocs_page_input_path = "lab_week_03.md";
-    var mkdocs_page_url = "/lab_week_03/";
+    var mkdocs_page_name = "Lab Week 4";
+    var mkdocs_page_input_path = "lab_week_04.md";
+    var mkdocs_page_url = "/lab_week_04/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -105,30 +105,36 @@
 <li>
           
             <li>
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Lab Week 3</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#lab-3-templates-and-exceptions">Lab 3: Templates and Exceptions</a></li>
-                
-                    <li><a class="toctree-l4" href="#exercise-1-queue-with-two-stacks">Exercise 1 - Queue with two Stacks</a></li>
-                
-                    <li><a class="toctree-l4" href="#exercise-11-template-queue">Exercise 1.1 - Template Queue</a></li>
-                
-                    <li><a class="toctree-l4" href="#exercise-12-exceptions">Exercise 1.2 - Exceptions</a></li>
-                
-                    <li><a class="toctree-l4" href="#example">Example</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../lab_week_03/">Lab Week 3</a>
         
     </li>
 <li>
           
             <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../lab_week_04/">Lab Week 4</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Lab Week 4</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lab-4-trees">Lab 4: Trees</a></li>
+                
+                    <li><a class="toctree-l4" href="#exercise-1-binary-search-trees">Exercise 1 - Binary Search Trees</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-get-the-code">How to get the code</a></li>
+                
+                    <li><a class="toctree-l4" href="#compiling">Compiling</a></li>
+                
+                    <li><a class="toctree-l4" href="#part-1-printing-the-tree">Part 1: Printing the tree</a></li>
+                
+                    <li><a class="toctree-l4" href="#part-2-maximum-and-minimum">Part 2: Maximum and Minimum</a></li>
+                
+                    <li><a class="toctree-l4" href="#part-3-find">Part 3: Find</a></li>
+                
+                    <li><a class="toctree-l4" href="#part-4-conversion">Part 4: Conversion</a></li>
+                
+            
+            </ul>
         
     </li>
 <li>
@@ -162,7 +168,7 @@
     
       
     
-    <li>Lab Week 3</li>
+    <li>Lab Week 4</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -172,101 +178,62 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="lab-3-templates-and-exceptions">Lab 3: Templates and Exceptions</h1>
-<h2 id="exercise-1-queue-with-two-stacks">Exercise 1 - Queue with two Stacks</h2>
-<p>Your task is to implement a class called <code>Queue</code> using two stacks <code>std::stack</code>.</p>
-<p>Public Methods</p>
-<pre><code class="cpp">Queue(int c = 256) {cap = c; sz = 0}
-void printAll()
-void push_q(data_type t)
-data_type pop_q() // removes and returns the top element
-bool isEmpty() 
+                <h1 id="lab-4-trees">Lab 4: Trees</h1>
+<h2 id="exercise-1-binary-search-trees">Exercise 1 - Binary Search Trees</h2>
+<p>Today we will be working on implementing a BST. </p>
+<p>We've written the foundation for a program to create a Tree, so all you have to do fill in the remaining function implementations!</p>
+<p><em>Note, since we're giving you a precompiled file, you're going to have to use C9 for this exercise</em></p>
+<h2 id="how-to-get-the-code">How to get the code</h2>
+<p>In your C9 terminal, run the following in the directory where you want the code</p>
+<pre><code>git clone https://github.com/scohe001/Tree
+</code></pre>
+<p>You'll notice you now have a <code>main</code>, and a <code>Tree</code> class.</p>
+<p>We've already completed most of the implementation of the <code>Tree</code> class for you. The details for doing the blanks so are in the comments, so don't just delete them!</p>
+<h2 id="compiling">Compiling</h2>
+<p>Since we're using C++11 features, you'll have to compile with the following:</p>
+<pre><code>g++ -std=c++11 -Wall main.cpp Tree.cpp
+</code></pre>
+<h2 id="part-1-printing-the-tree">Part 1: Printing the tree</h2>
+<p>Implement the print recursive function to print all of the values of the tree in order.</p>
+<pre><code class="cpp">Tree test = {5, 2, 7, 3, 8, 3, 7};
+print(&quot;Printing!&quot;, MAGENTA);
+cout &lt;&lt; endl;
+test.print();
 </code></pre>
 
-<p>Private Data Fields</p>
-<pre><code class="cpp">stack&lt;data_type&gt; s1;
-stack&lt;data_type&gt; s2;
-unsigned sz;  // the number of elements currently being used in Queue
-unsigned cap; // the size of Queue
+<p>The output should look like the following:</p>
+<pre><code class="cpp">Printing!
+2 3 5 7 8 
 </code></pre>
 
-<h2 id="exercise-11-template-queue">Exercise 1.1 - Template Queue</h2>
-<p>Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types.
-<code>Queue</code> should now become:</p>
-<pre><code class="cpp">template&lt;typename T&gt;
-class Queue
-{
-    public:
-        // ...  
-    private: 
-        // ...
-};
+<h2 id="part-2-maximum-and-minimum">Part 2: Maximum and Minimum</h2>
+<p>Implement recurisve min and max functions to find the min and max value in the tree whose root is the parameter.</p>
+<pre><code class="cpp">Tree test = {5, 2, 7, 3, 8, 3, 7};
+Node* min = test.min();
+Node* max = test.max();
+cout &lt;&lt; &quot;Min: &quot; &lt;&lt; min-&gt;val &lt;&lt; endl &lt;&lt; &quot;Max: &quot; &lt;&lt; max-&gt;val &lt;&lt; endl;
 </code></pre>
 
-<p>and <code>printAll()</code> should now become:</p>
-<pre><code class="cpp">template&lt;typename T&gt;
-void Queue&lt;T&gt;::printAll()
-{
-    // ...
-}
+<p>The output should look like the following:</p>
+<pre><code class="cpp">Min: 2
+Max: 8
 </code></pre>
 
-<h2 id="exercise-12-exceptions">Exercise 1.2 - Exceptions</h2>
-<p>Add an exception handler that throws a <code>runtime_error</code> object in the <code>pop_q()</code> and <code>push_q()</code> function that is caught and handled in the main program. 
-Determine what conditions in <code>pop_q()</code> and <code>push_q</code> would cause an exception to be thrown.
-When the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. </p>
-<p><code>main</code> should look like the following:</p>
-<pre><code class="cpp">int main()
-{
-    string s = &quot;abcde&quot;;
-    Queue&lt;char&gt; q(s.size());
-    try 
-    {
-        // ...
-    }
-    catch ( ... )
-    {
-       // ...
-    }
-
-    return 0;
-}
+<h2 id="part-3-find">Part 3: Find</h2>
+<p>Implement the find recursive function to find a value in the tree and return it's node pointer (returning 0 if not found).</p>
+<pre><code class="cpp">Tree test = {5, 2, 7, 3, 8, 3, 7};
+Node* f1 = test.find(6);
+Node* f2 = test.find(7);
 </code></pre>
 
-<h2 id="example">Example</h2>
-<p>Exceptions are not implemented in this example.</p>
-<pre><code class="cpp">int main()
-{
-    string s = &quot;abcde&quot;;
-    Queue&lt;char&gt; q(s.size());
-    for(unsigned i = 0; i &lt; s.size(); ++i)
-    {
-        q.push_q(s.at(i));
-    }
-    q.printAll();
-
-    for(unsigned i = 0; i &lt; 3; ++i)
-    {
-        q.pop_q();
-        q.printAll();
-    }
-    q.push_q('x');
-    q.printAll();
-    q.push_q('y');
-    q.printAll();
-
-    return 0;
-}
+<p>Be sure to notify the user whether or not the value is found. </p>
+<h2 id="part-4-conversion">Part 4: Conversion</h2>
+<p>Implement a to_vec function that converts the tree to a vector and returns the sorted vector of tree values.</p>
+<pre><code class="cpp">Tree test = {5, 2, 7, 3, 8, 3, 7};
+vector&lt;int&gt; v = test.to_vector();
 </code></pre>
 
-<p>Output (first element is the top element): </p>
-<pre><code class="cpp">a b c d e 
-b c d e 
-c d e 
-d e 
-d e x 
-d e x y 
-</code></pre>
+<p>The vector should contain the following values (in this order): 2 3 5 7 8</p>
               
             </div>
           </div>
@@ -274,10 +241,10 @@ d e x y
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../lab_week_04/" class="btn btn-neutral float-right" title="Lab Week 4">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../lec_week_04/" class="btn btn-neutral float-right" title="Lecture Week 4">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../lec_week_03_pt3/" class="btn btn-neutral" title="Templates"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lab_week_03/" class="btn btn-neutral" title="Lab Week 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -303,10 +270,10 @@ d e x y
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../lec_week_03_pt3/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../lab_week_03/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../lab_week_04/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../lec_week_04/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
