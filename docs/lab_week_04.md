@@ -1,112 +1,83 @@
-Lab 3: Templates and Exceptions
+Lab 4: Trees
 ===================================
 
-Exercise 1 - Queue with two Stacks
+Exercise 1 - Binary Search Trees
 ----------
 
-Your task is to implement a class called `Queue` using two stacks `std::stack`.
+Today we will be working on implementing a BST. 
 
-Public Methods
-```cpp
-Queue(int c = 256) {cap = c; sz = 0}
-void printAll()
-void push_q(data_type t)
-data_type pop_q() // removes and returns the top element
-bool isEmpty() 
-```
+We've written the foundation for a program to create a Tree, so all you have to do fill in the remaining function implementations!
 
-Private Data Fields
-```cpp
-stack<data_type> s1;
-stack<data_type> s2;
-unsigned sz;  // the number of elements currently being used in Queue
-unsigned cap; // the size of Queue
-```
+_Note, since we're giving you a precompiled file, you're going to have to use C9 for this exercise_
 
-Exercise 1.1 - Template Queue
+How to get the code
+-------------------
+In your C9 terminal, run the following in the directory where you want the code
+
+	git clone https://github.com/scohe001/Tree
+
+You'll notice you now have a `main`, and a `Tree` class.
+
+We've already completed most of the implementation of the `Tree` class for you. The details for doing the blanks so are in the comments, so don't just delete them!
+
+Compiling
+---------
+
+Since we're using C++11 features, you'll have to compile with the following:
+
+	g++ -std=c++11 -Wall main.cpp Tree.cpp
+	
+Part 1: Printing the tree
 ----------
+Implement the print recursive function to print all of the values of the tree in order.
 
-Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types.
-`Queue` should now become:
 ```cpp
-template<typename T>
-class Queue
-{
-	public:
-	    // ...	
-	private: 
-        // ...
-};
+Tree test = {5, 2, 7, 3, 8, 3, 7};
+print("Printing!", MAGENTA);
+cout << endl;
+test.print();
 ```
-and `printAll()` should now become:
+
+The output should look like the following:
 ```cpp
-template<typename T>
-void Queue<T>::printAll()
-{
-    // ...
-}
+Printing!
+2 3 5 7 8 
 ```
-Exercise 1.2 - Exceptions
+
+Part 2: Maximum and Minimum
 ----------
+Implement recurisve min and max functions to find the min and max value in the tree whose root is the parameter.
 
-Add an exception handler that throws a `runtime_error` object in the `pop_q()` and `push_q()` function that is caught and handled in the main program. 
-Determine what conditions in `pop_q()` and `push_q` would cause an exception to be thrown.
-When the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. 
-
-`main` should look like the following:
 ```cpp
-int main()
-{
-  	string s = "abcde";
-    Queue<char> q(s.size());
-    try 
-    {
-        // ...
-    }
-    catch ( ... )
-    {
-       // ...
-    }
-    
-    return 0;
-}
+Tree test = {5, 2, 7, 3, 8, 3, 7};
+Node* min = test.min();
+Node* max = test.max();
+cout << "Min: " << min->val << endl << "Max: " << max->val << endl;
+```
+The output should look like the following:
+```cpp
+Min: 2
+Max: 8
 ```
 
-Example
+Part 3: Find
 ----------
-Exceptions are not implemented in this example.
+Implement the find recursive function to find a value in the tree and return it's node pointer (returning 0 if not found).
 
 ```cpp
-int main()
-{
-	string s = "abcde";
-	Queue<char> q(s.size());
-	for(unsigned i = 0; i < s.size(); ++i)
-	{
-		q.push_q(s.at(i));
-	}
-	q.printAll();
-
-	for(unsigned i = 0; i < 3; ++i)
-	{
-		q.pop_q();
-		q.printAll();
-	}
-	q.push_q('x');
-	q.printAll();
-	q.push_q('y');
-	q.printAll();
-    
-    return 0;
-}
+Tree test = {5, 2, 7, 3, 8, 3, 7};
+Node* f1 = test.find(6);
+Node* f2 = test.find(7);
 ```
+Be sure to notify the user whether or not the value is found. 
 
-Output (first element is the top element): 
+Part 4: Conversion
+----------
+ Implement a to_vec function that converts the tree to a vector and returns the sorted vector of tree values.
+ 
 ```cpp
-a b c d e 
-b c d e 
-c d e 
-d e 
-d e x 
-d e x y 
+Tree test = {5, 2, 7, 3, 8, 3, 7};
+vector<int> v = test.to_vector();
 ```
+The vector should contain the following values (in this order): 2 3 5 7 8
+
