@@ -14,7 +14,7 @@ How to get the code
 -------------------
 In your C9 terminal, run the following in the directory where you want the code
 
-	git clone https://github.com/scohe001/Tree
+
 
 You'll notice you now have a `main`, and a `Tree` class.
 
