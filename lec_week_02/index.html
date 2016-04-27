@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Lecture Week 2 - CS14 SI: Spring 2015</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lecture Week 2";
+    var mkdocs_page_input_path = "lec_week_02.md";
+    var mkdocs_page_url = "/lec_week_02/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CS14 SI: Spring 2015</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Lecture Week 2</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lecture-2-lists">Lecture 2: Lists</a></li>
+                
+                    <li><a class="toctree-l4" href="#question-of-the-day">Question of the day!</a></li>
+                
+                    <li><a class="toctree-l4" href="#lists">Lists</a></li>
+                
+                    <li><a class="toctree-l4" href="#singly-linked-lists">Singly-linked Lists</a></li>
+                
+                    <li><a class="toctree-l4" href="#doubly-linked-list">Doubly Linked List</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercise-1-fibonacci-exercise">Exercise 1: Fibonacci Exercise</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercise-2-palindrome-exercise">Exercise 2: Palindrome Exercise</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#exercise-3-animation">Exercise 3: Animation!</a></li>
+                
+                    <li><a class="toctree-l4" href="#how-to-get-the-code">How to get the code</a></li>
+                
+                    <li><a class="toctree-l4" href="#compiling">Compiling</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lab_week_02/">Lab Week 2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Lecture Week 3</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_03/">Stacks & Queues</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_03_pt2/">Exceptions</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_03_pt3/">Templates</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lab_week_03/">Lab Week 3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_04/">Lecture Week 4</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lab_week_04/">Lab Week 4</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_05/">Lecture Week 5</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CS14 SI: Spring 2015</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Lecture Week 2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lecture-2-lists">Lecture 2: Lists</h1>
+<h2 id="question-of-the-day">Question of the day!</h2>
+<blockquote>
+<p>How many programmers does it take to change a light bulb?</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>None. That's a hardware problem.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<h2 id="lists">Lists</h2>
+<p>An <strong>abstract data type (ADT)</strong> is a data type described by pre-defined user operations, such as "insert data at rear," without indicating how each operation is implemented.</p>
+<p>Lists are a common ADT for holding data, with operations like appending a data item, removing a data item, searching and printing. Each item in a list ADT is called a <strong>node</strong>.</p>
+<h2 id="singly-linked-lists">Singly-linked Lists</h2>
+<p>Singly-linked lists is a data structure for implementing a list ADT, where each node has a data and a pointer to the next node. The list structure typically has pointers to the list's first node and last node. The list's first node is called the <strong>head</strong>, and the last node is the <strong>tail</strong>.</p>
+<p><img alt="alt text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Singly-linked-list.svg/408px-Singly-linked-list.svg.png" />
+    The head in this case would be the node with value 12 and the tail would be the node with value 37</p>
+<p>In order to implement a Linked List, you must define the structure
+for an individual node.</p>
+<p>For a singly-linked list of integers, it may look something like:</p>
+<pre><code class="cpp">struct IntNode{
+    int val;
+    IntNode* next;
+};
+</code></pre>
+
+<p>In order to implement the Linked List, we store the head of the list,
+which is a pointer to a <code>IntNode</code>. We also implement methods that
+insert/remove elements from the list
+e.g.</p>
+<pre><code class="cpp">class IntLinkedList {
+    public:
+        void push_front(int val);
+        // ...
+    private:
+        IntNode* head;
+    IntNode* tail;
+};
+</code></pre>
+
+<h2 id="doubly-linked-list">Doubly Linked List</h2>
+<p>In a doubly linked list, each node contains three parts:</p>
+<ul>
+<li>Data</li>
+<li>Pointer to the next node</li>
+<li>Pointer to the previous node</li>
+</ul>
+<p><img alt="alt text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Doubly-linked-list.svg/610px-Doubly-linked-list.svg.png" /></p>
+<p>In this case, our new struct may look something like:</p>
+<pre><code class="cpp">struct IntNode{
+    int val;
+    IntNode* next;
+    IntNode* previous;
+};
+</code></pre>
+
+<h1 id="exercise-1-fibonacci-exercise">Exercise 1: Fibonacci Exercise</h1>
+<p>Fn = Fn-1 + Fn-2</p>
+<p>F0 = 0, F1 = 1</p>
+<p>Write a program that will calculate a specified fibonacci number using the <code>std::list data</code>
+structure. Think about how to use a list to store values of the formula above.</p>
+<ul>
+<li>Input:    integer n</li>
+<li>Output:   nth Fibonacci number</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>Which Fibonacci number to calculate: <font color='red'>10</font></li>
+<li>10th Fibonacci number: <font color='red'>55</font></li>
+</ul>
+<h1 id="exercise-2-palindrome-exercise">Exercise 2: Palindrome Exercise</h1>
+<p>Write a program that will test to see if a specific word is a palindrome using the std::list
+data structure.</p>
+<ul>
+<li>Input:    string input</li>
+<li>Output:   result of the palindrome test</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li>Enter a word to test for palindrome: <font color='red'>tacocats</font></li>
+<li><font color='red'>tacocats</font> is not a palindrome.</li>
+</ul>
+<p><em>Key functions to incorporate: back(), pop_back()</em></p>
+<h1 id="exercise-3-animation">Exercise 3: Animation!</h1>
+<p>We've written the foundation for a program to create animations in the terminal, all you have to do is connect the dots!</p>
+<p>At the moment, the program will push encrypted characters that need to be displayed into a queue, but those characters still need to be put into <code>cout</code>!</p>
+<p><em>Note, since we're giving you a precompiled file, you're going to have to use C9 for this exercise</em></p>
+<h2 id="how-to-get-the-code">How to get the code</h2>
+<p>In your C9 terminal, run the following in the directory where you want the code</p>
+<pre><code>git clone https://github.com/scohe001/Animations
+</code></pre>
+<p>You'll notice you now have a <code>main</code>, an <code>Animator</code> class and a couple animation files (don't look at them yet, it'll ruin the surprise!<sup><a href="#myfootnote1">*</a></sup>).</p>
+<p>We've already completely implemented the <code>Animator</code> class for you and compiled it, so all you'll have to do is finish off the <code>main</code> skeleton! The details for doing so are in the comments, so don't just delete them!</p>
+<h2 id="compiling">Compiling</h2>
+<p>Since we're using C++11 features and threading, you'll have to compile with the following:</p>
+<pre><code>g++ -std=c++11 -pthread -Wall main.cpp animation.o
+</code></pre>
+<p>After you get your main up and running, test it out with all four animations! I'd highly suggest starting with the Eyes animation, as it's the simplest by far of all of them so it'll be easier to debug. Once you get one animation working, they should all work!</p>
+<p>Once you have all of the animations working, delete <code>animation.o</code> and use the skeleton <code>animation.cpp</code> we've given you to complete the <code>Animation</code> class! Recompiling the <code>Animation</code> class should look like the following:</p>
+<pre><code>g++ -std=c++11 -pthread -c animation.cpp
+</code></pre>
+<p><em><a name="myfootnote1">*</a> Since you're all CS majors I'm sure the lot of you have already looked at them &gt;.&gt;</em></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lab_week_02/" class="btn btn-neutral float-right" title="Lab Week 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../lab_week_02/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
