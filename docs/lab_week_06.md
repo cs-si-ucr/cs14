@@ -58,7 +58,7 @@ Since a map here is technically just a tree with some special operations built o
 
 ##How To Get The Code
 
-[Visit](https://raw.githubusercontent.com/scohe001/Map/master/map.h/) to view the Map.h
+[Visit](https://github.com/scohe001/Map/blob/master/map.h) to view the Map.h
     
 ###Your Job
 
