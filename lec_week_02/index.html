@@ -191,7 +191,7 @@ e.g.</p>
 
 <h2 id="dummy-nodes">Dummy Nodes</h2>
 <p>Sometimes, to make edge cases easier to handle, dummy nodes are used at the end of lists. For example:</p>
-<p><img alt="alt text" src="../condor.depaul.edu/ntomuro/courses/393/notes/figs/lectur4.gif" /></p>
+<p><img alt="alt text" src="http://condor.depaul.edu/ntomuro/courses/393/notes/figs/lectur4.gif" /></p>
 <p>In this image the list is of size 1, however there are three nodes. This is because the
 first and the last nodes are "Dummy Nodes." Dummy Nodes are there to make lists 
 easier to use. For example, without dummy nodes, writting a function typically requires
@@ -243,6 +243,9 @@ void IntList :: popFront(){
 }
 </code></pre>
 
+<p>Other functions must of course also be changed such as the print function, but the overall
+complexity of the code decreases. The contents of the dummy node don't matter as they shouldn't
+ever be seen.</p>
 <h1 id="exercise-1-fibonacci-exercise">Exercise 1: Fibonacci Exercise</h1>
 <p>Fn = Fn-1 + Fn-2</p>
 <p>F0 = 0, F1 = 1</p>
