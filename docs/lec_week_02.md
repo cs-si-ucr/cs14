@@ -66,7 +66,64 @@ struct IntNode{
 };
 ```
 
+Dummy Nodes
+-----------
+Sometimes, to make edge cases easier to handle, dummy nodes are used at the end of lists. For example:
 
+![alt text](condor.depaul.edu/ntomuro/courses/393/notes/figs/lectur4.gif)
+
+In this image the list is of size 1, however there are three nodes. This is because the
+first and the last nodes are "Dummy Nodes." Dummy Nodes are there to make lists 
+easier to use. For example, without dummy nodes, writting a function typically requires
+accounting for the special cases such as when the list is empty or size one.
+Take for example the following code for a push back and pop front for a singly-linked
+list with only a head pointer.
+```cpp
+void IntList :: pushBack(int n){
+    if(head == 0){
+        head = new Node(n);
+        return;
+    }
+    Node* loop = 0;
+    for(loop = head; loop->next != 0; loop = loop->next){}
+    loop->next = new Node(n);
+}
+
+void IntList :: popFront(){
+    if(head == 0){
+        return; // list is empty
+    }
+    else if(head->next == 0){
+        delete head;
+        head = 0;
+    }
+    else{
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+    }
+}
+```
+Using Dummy nodes, we can reduce this code to the following:
+
+```cpp
+void IntList :: pushBack(int n){
+    Node* loop = 0;
+    for(loop = head; loop->next != 0; loop = loop->next){}
+    loop->next = new Node(n);
+}
+
+void IntList :: popFront(){
+    if(head->next == 0){
+        return; //list is empty
+    }
+    else{
+        Node* temp = head->next;
+        head->next = temp->next;
+        delete temp;
+    }
+}
+```
 Exercise 1: Fibonacci Exercise
 ====================
 
