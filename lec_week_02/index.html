@@ -69,6 +69,8 @@
         
             <li><a class="toctree-l3" href="#doubly-linked-list">Doubly Linked List</a></li>
         
+            <li><a class="toctree-l3" href="#dummy-nodes">Dummy Nodes</a></li>
+        
         </ul>
     
 
@@ -185,6 +187,60 @@ e.g.</p>
     IntNode* next;
     IntNode* previous;
 };
+</code></pre>
+
+<h2 id="dummy-nodes">Dummy Nodes</h2>
+<p>Sometimes, to make edge cases easier to handle, dummy nodes are used at the end of lists. For example:</p>
+<p><img alt="alt text" src="../condor.depaul.edu/ntomuro/courses/393/notes/figs/lectur4.gif" /></p>
+<p>In this image the list is of size 1, however there are three nodes. This is because the
+first and the last nodes are "Dummy Nodes." Dummy Nodes are there to make lists 
+easier to use. For example, without dummy nodes, writting a function typically requires
+accounting for the special cases such as when the list is empty or size one.
+Take for example the following code for a push back and pop front for a singly-linked
+list with only a head pointer.</p>
+<pre><code class="cpp">void IntList :: pushBack(int n){
+    if(head == 0){
+        head = new Node(n);
+        return;
+    }
+    Node* loop = 0;
+    for(loop = head; loop-&gt;next != 0; loop = loop-&gt;next){}
+    loop-&gt;next = new Node(n);
+}
+
+void IntList :: popFront(){
+    if(head == 0){
+        return; // list is empty
+    }
+    else if(head-&gt;next == 0){
+        delete head;
+        head = 0;
+    }
+    else{
+        Node* temp = head;
+        head = head-&gt;next;
+        delete temp;
+    }
+}
+</code></pre>
+
+<p>Using Dummy nodes, we can reduce this code to the following:</p>
+<pre><code class="cpp">void IntList :: pushBack(int n){
+    Node* loop = 0;
+    for(loop = head; loop-&gt;next != 0; loop = loop-&gt;next){}
+    loop-&gt;next = new Node(n);
+}
+
+void IntList :: popFront(){
+    if(head-&gt;next == 0){
+        return; //list is empty
+    }
+    else{
+        Node* temp = head-&gt;next;
+        head-&gt;next = temp-&gt;next;
+        delete temp;
+    }
+}
 </code></pre>
 
 <h1 id="exercise-1-fibonacci-exercise">Exercise 1: Fibonacci Exercise</h1>
