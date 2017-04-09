@@ -70,7 +70,7 @@ Dummy Nodes
 -----------
 Sometimes, to make edge cases easier to handle, dummy nodes are used at the end of lists. For example:
 
-![alt text](condor.depaul.edu/ntomuro/courses/393/notes/figs/lectur4.gif)
+![alt text](http://condor.depaul.edu/ntomuro/courses/393/notes/figs/lectur4.gif)
 
 In this image the list is of size 1, however there are three nodes. This is because the
 first and the last nodes are "Dummy Nodes." Dummy Nodes are there to make lists 
@@ -78,6 +78,7 @@ easier to use. For example, without dummy nodes, writting a function typically r
 accounting for the special cases such as when the list is empty or size one.
 Take for example the following code for a push back and pop front for a singly-linked
 list with only a head pointer.
+
 ```cpp
 void IntList :: pushBack(int n){
     if(head == 0){
@@ -124,6 +125,10 @@ void IntList :: popFront(){
     }
 }
 ```
+Other functions must of course also be changed such as the print function, but the overall
+complexity of the code decreases. The contents of the dummy node don't matter as they shouldn't
+ever be seen.
+
 Exercise 1: Fibonacci Exercise
 ====================
 
