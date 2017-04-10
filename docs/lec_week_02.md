@@ -125,6 +125,9 @@ void IntList :: popFront(){
     }
 }
 ```
+Notice how in both functions, the `if(head == 0)` is no longer a case we have to check for
+(since head will never be 0). This helps simplify the code and handle common edge cases.
+
 Other functions must of course also be changed such as the print function, but the overall
 complexity of the code decreases. The contents of the dummy node don't matter as they shouldn't
 ever be seen.
