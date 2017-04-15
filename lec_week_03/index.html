@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Big-O Analysis - CS14 SI: Spring 2015</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Big-O Analysis";
+    var mkdocs_page_input_path = "lec_week_03.md";
+    var mkdocs_page_url = "/lec_week_03/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CS14 SI: Spring 2015</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lec_week_02/">Lecture Week 2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../lab_week_02/">Lab Week 2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Lecture Week 3</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Big-O Analysis</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#big-o-time-complexity">Big-O Time Complexity</a></li>
+                
+                    <li><a class="toctree-l4" href="#problem-1">Problem 1</a></li>
+                
+                    <li><a class="toctree-l4" href="#problem-2">Problem 2</a></li>
+                
+                    <li><a class="toctree-l4" href="#problem-3">Problem 3</a></li>
+                
+                    <li><a class="toctree-l4" href="#problem-4">Problem 4</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CS14 SI: Spring 2015</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Lecture Week 3 &raquo;</li>
+        
+      
+    
+    <li>Big-O Analysis</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="big-o-time-complexity">Big-O Time Complexity</h1>
+<p>For the following functions give the nearest Big-O time complexity.</p>
+<h2 id="problem-1">Problem 1</h2>
+<pre><code class="cpp">int f1(const std::vector&lt;int&gt;&amp; v) {
+    int result = 0;
+    for (int i = 0; i &lt; v.size(); ++i) {
+        for (int j = v.size(); j &gt;= 0; j -= 2) {
+            result += v.at(i) * j;
+        }
+    }
+    return result;
+}
+</code></pre>
+
+<h2 id="problem-2">Problem 2</h2>
+<pre><code class="cpp">void f2(std::list&lt;int&gt;&amp; l, int n) {
+    for (int i = 0; i &lt; n; ++i) {
+        l.remove(i);
+    }
+}
+</code></pre>
+
+<h2 id="problem-3">Problem 3</h2>
+<pre><code class="cpp">void f3(std::stack&lt;int&gt;&amp; s) {
+    if (s.empty()) return;
+    std::stack&lt;int&gt; temp;
+    int min;
+    for (int i = 0; i &lt; s.size(); ++i) {
+        min = s.top();
+        s.pop();
+        for(int j = i; j &lt; s.size(); ++j) {
+            if (s.top() &lt; min) {
+                temp.push(min);
+                min = s.top();
+            }
+            else temp.push(s.top());
+            s.pop();
+        }i
+        s.push(min);
+        while(!temp.empty()) {
+            s.push(temp.top());
+            temp.pop();
+        }
+    }
+}
+</code></pre>
+
+<h2 id="problem-4">Problem 4</h2>
+<p>For this problem just give the Big-O time complexity for <code>f4</code></p>
+<p>Bonus: What is the Big-O space complexity for <code>f4</code>?</p>
+<pre><code class="cpp">
+
+void f4(std::queue&lt;int&gt;&amp; q) {
+    if (q.size() &lt;= 1) return;
+    std::queue&lt;int&gt; left;
+    std::queue&lt;int&gt; right;
+    for (int i = 0; i &lt; q.size() / 2; ++i) {
+        left.push(q.front());
+        q.pop();
+    }
+    while(!q.empty()) {
+        right.push(q.front());
+        q.pop();
+    }
+    f4(left);
+    f4(right);
+    q = f5(left, right);
+}
+
+std::queue&lt;int&gt; f5(std::queue&lt;int&gt;&amp; left, std::queue&lt;int&gt;&amp; right){
+    std::queue&lt;int&gt; result;
+    while(!left.empty() &amp;&amp; !right.empty()) {
+        if (left.front() &gt; right.front()) {
+            result.push(right.front());
+            right.pop();
+        }
+        else {
+            result.push(left.front());
+            left.pop();
+        }
+    }
+    while(!left.empty()) {
+        result.push(left.front());
+        left.pop();
+    }
+    while(!right.empty()) {
+        result.push(right.front());
+        right.pop();
+    }
+    return result;
+}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../lab_week_02/" class="btn btn-neutral" title="Lab Week 2"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../lab_week_02/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>
