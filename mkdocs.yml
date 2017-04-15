@@ -7,8 +7,8 @@ pages:
     #- [lec_week_02.md, "Lecture Week 2"]
     - Lab Week 2: lab_week_02.md
     #- [lab_week_02.md, "Lab Week 2"]
-    #- Lecture Week 3:
-        #- Stacks & Queues: lec_week_03.md
+    - Lecture Week 3:
+        - Big-O Analysis: lec_week_03.md
         #- Exceptions: lec_week_03_pt2.md
         #- Templates: lec_week_03_pt3.md
     #- Lab Week 3: lab_week_03.md
