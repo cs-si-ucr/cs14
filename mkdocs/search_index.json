@@ -196,32 +196,37 @@
             "title": "Stretch-goal exercise:"
         },
         {
-            "location": "/lab_week_03_old/",
-            "text": "Lab 3: Templates and Exceptions\n\n\nExercise 1 - Queue with two Stacks\n\n\nYour task is to implement a class called \nQueue\n using two stacks \nstd::stack\n.\n\n\nPublic Methods\n\n\nQueue(int c = 256) {cap = c; sz = 0}\nvoid printAll()\nvoid push_q(data_type t)\ndata_type pop_q() // removes and returns the top element\nbool isEmpty() \n\n\n\n\nPrivate Data Fields\n\n\nstack<data_type> s1;\nstack<data_type> s2;\nunsigned sz;  // the number of elements currently being used in Queue\nunsigned cap; // the size of Queue\n\n\n\n\nExercise 1.1 - Template Queue\n\n\nTake your completed queue class and create a queue template to allow your class to have members that use template parameters as types.\n\nQueue\n should now become:\n\n\ntemplate<typename T>\nclass Queue\n{\n    public:\n        // ...  \n    private: \n        // ...\n};\n\n\n\n\nand \nprintAll()\n should now become:\n\n\ntemplate<typename T>\nvoid Queue<T>::printAll()\n{\n    // ...\n}\n\n\n\n\nExercise 1.2 - Exceptions\n\n\nAdd an exception handler that throws a \nruntime_error\n object in the \npop_q()\n and \npush_q()\n function that is caught and handled in the main program. \nDetermine what conditions in \npop_q()\n and \npush_q\n would cause an exception to be thrown.\nWhen the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. \n\n\nmain\n should look like the following:\n\n\nint main()\n{\n    string s = \"abcde\";\n    Queue<char> q(s.size());\n    try \n    {\n        // ...\n    }\n    catch ( ... )\n    {\n       // ...\n    }\n\n    return 0;\n}\n\n\n\n\nExample\n\n\nExceptions are not implemented in this example.\n\n\nint main()\n{\n    string s = \"abcde\";\n    Queue<char> q(s.size());\n    for(unsigned i = 0; i < s.size(); ++i)\n    {\n        q.push_q(s.at(i));\n    }\n    q.printAll();\n\n    for(unsigned i = 0; i < 3; ++i)\n    {\n        q.pop_q();\n        q.printAll();\n    }\n    q.push_q('x');\n    q.printAll();\n    q.push_q('y');\n    q.printAll();\n\n    return 0;\n}\n\n\n\n\nOutput (first element is the top element): \n\n\na b c d e \nb c d e \nc d e \nd e \nd e x \nd e x y",
+            "location": "/lab_week_03/",
+            "text": "Lab 3: Templates and Exceptions\n\n\nExercise 1- Circular int Queue\n\n\nFor this exercise you will be implementing an array-based queue with circular functionality like the one in Professor Miller's \n\"slides\"\n.\n\n\nExercise 1 - Queue with two Stacks\n\n\nYour task is to implement a class called \nQueue\n using two stacks \nstd::stack\n.\n\n\nPublic Methods\n\n\nQueue(int c = 256) {cap = c; sz = 0}\nvoid printAll()\nvoid push_q(data_type t)\ndata_type pop_q() // removes and returns the top element\nbool isEmpty() \n\n\n\n\nPrivate Data Fields\n\n\nstack<data_type> s1;\nstack<data_type> s2;\nunsigned sz;  // the number of elements currently being used in Queue\nunsigned cap; // the size of Queue\n\n\n\n\nExercise 1.1 - Template Queue\n\n\nTake your completed queue class and create a queue template to allow your class to have members that use template parameters as types.\n\nQueue\n should now become:\n\n\ntemplate<typename T>\nclass Queue\n{\n    public:\n        // ...  \n    private: \n        // ...\n};\n\n\n\n\nand \nprintAll()\n should now become:\n\n\ntemplate<typename T>\nvoid Queue<T>::printAll()\n{\n    // ...\n}\n\n\n\n\nExercise 1.2 - Exceptions\n\n\nAdd an exception handler that throws a \nruntime_error\n object in the \npop_q()\n and \npush_q()\n function that is caught and handled in the main program. \nDetermine what conditions in \npop_q()\n and \npush_q\n would cause an exception to be thrown.\nWhen the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. \n\n\nmain\n should look like the following:\n\n\nint main()\n{\n    string s = \"abcde\";\n    Queue<char> q(s.size());\n    try \n    {\n        // ...\n    }\n    catch ( ... )\n    {\n       // ...\n    }\n\n    return 0;\n}\n\n\n\n\nExample\n\n\nExceptions are not implemented in this example.\n\n\nint main()\n{\n    string s = \"abcde\";\n    Queue<char> q(s.size());\n    for(unsigned i = 0; i < s.size(); ++i)\n    {\n        q.push_q(s.at(i));\n    }\n    q.printAll();\n\n    for(unsigned i = 0; i < 3; ++i)\n    {\n        q.pop_q();\n        q.printAll();\n    }\n    q.push_q('x');\n    q.printAll();\n    q.push_q('y');\n    q.printAll();\n\n    return 0;\n}\n\n\n\n\nOutput (first element is the top element): \n\n\na b c d e \nb c d e \nc d e \nd e \nd e x \nd e x y",
             "title": "Lab Week 3"
         },
         {
-            "location": "/lab_week_03_old/#lab-3-templates-and-exceptions",
+            "location": "/lab_week_03/#lab-3-templates-and-exceptions",
             "text": "",
             "title": "Lab 3: Templates and Exceptions"
         },
         {
-            "location": "/lab_week_03_old/#exercise-1-queue-with-two-stacks",
+            "location": "/lab_week_03/#exercise-1-circular-int-queue",
+            "text": "For this exercise you will be implementing an array-based queue with circular functionality like the one in Professor Miller's  \"slides\" .",
+            "title": "Exercise 1- Circular int Queue"
+        },
+        {
+            "location": "/lab_week_03/#exercise-1-queue-with-two-stacks",
             "text": "Your task is to implement a class called  Queue  using two stacks  std::stack .  Public Methods  Queue(int c = 256) {cap = c; sz = 0}\nvoid printAll()\nvoid push_q(data_type t)\ndata_type pop_q() // removes and returns the top element\nbool isEmpty()   Private Data Fields  stack<data_type> s1;\nstack<data_type> s2;\nunsigned sz;  // the number of elements currently being used in Queue\nunsigned cap; // the size of Queue",
             "title": "Exercise 1 - Queue with two Stacks"
         },
         {
-            "location": "/lab_week_03_old/#exercise-11-template-queue",
+            "location": "/lab_week_03/#exercise-11-template-queue",
             "text": "Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types. Queue  should now become:  template<typename T>\nclass Queue\n{\n    public:\n        // ...  \n    private: \n        // ...\n};  and  printAll()  should now become:  template<typename T>\nvoid Queue<T>::printAll()\n{\n    // ...\n}",
             "title": "Exercise 1.1 - Template Queue"
         },
         {
-            "location": "/lab_week_03_old/#exercise-12-exceptions",
+            "location": "/lab_week_03/#exercise-12-exceptions",
             "text": "Add an exception handler that throws a  runtime_error  object in the  pop_q()  and  push_q()  function that is caught and handled in the main program. \nDetermine what conditions in  pop_q()  and  push_q  would cause an exception to be thrown.\nWhen the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate.   main  should look like the following:  int main()\n{\n    string s = \"abcde\";\n    Queue<char> q(s.size());\n    try \n    {\n        // ...\n    }\n    catch ( ... )\n    {\n       // ...\n    }\n\n    return 0;\n}",
             "title": "Exercise 1.2 - Exceptions"
         },
         {
-            "location": "/lab_week_03_old/#example",
+            "location": "/lab_week_03/#example",
             "text": "Exceptions are not implemented in this example.  int main()\n{\n    string s = \"abcde\";\n    Queue<char> q(s.size());\n    for(unsigned i = 0; i < s.size(); ++i)\n    {\n        q.push_q(s.at(i));\n    }\n    q.printAll();\n\n    for(unsigned i = 0; i < 3; ++i)\n    {\n        q.pop_q();\n        q.printAll();\n    }\n    q.push_q('x');\n    q.printAll();\n    q.push_q('y');\n    q.printAll();\n\n    return 0;\n}  Output (first element is the top element):   a b c d e \nb c d e \nc d e \nd e \nd e x \nd e x y",
             "title": "Example"
         }
