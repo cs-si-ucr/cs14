@@ -11,7 +11,7 @@ pages:
         - Big-O Analysis: lec_week_03.md
         - Exceptions: lec_week_03_pt2.md
         - Templates: lec_week_03_pt3.md
-    #- Lab Week 3: lab_week_03.md
+    - Lab Week 3: lab_week_03.md
     #- [lec_week_03.md, "Stacks & Queues"]
     #- [lec_week_03_pt2.md, "Exceptions"]
     #- [lab_week_02.md, "Lab Week 2"]
