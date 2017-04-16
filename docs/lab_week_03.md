@@ -5,7 +5,17 @@ Lab 3: Templates and Exceptions
 
 Exercise 1- Circular int Queue
 ----------
-For this exercise you will be implementing an array-based queue with circular functionality like the one in Professor Miller's ["slides"][queue-slides].
+For this exercise you will be implementing an array-based queue with circular functionality like the one in Professor Miller's [slides][queue-slides]. Implement the functionality in a class called 'Queue' and include the following functions:
+```cpp
+Queue();
+void enqueue(int n);
+void dequeue();
+int getFirst();
+int getLast();
+};
+```
+When creating the underlying array, feel free to set a max size of the array like so:
+`int arr[10]; // Max Queue size`
 
 
 Exercise 1 - Queue with two Stacks
