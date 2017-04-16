@@ -1,12 +1,5 @@
-
 Lab 3: Templates and Exceptions
 ===================================
-[queue-slides]:https://d1b10bmlvqabco.cloudfront.net/attach/j129btc6ipp515/h7ks2ibk8jg6s3/j1hydurqd650/Queues.pdf "Miller's queue lecture slides"
-
-Exercise 1- Circular int Queue
-----------
-For this exercise you will be implementing an array-based queue with circular functionality like the one in Professor Miller's ["slides"][queue-slides].
-
 
 Exercise 1 - Queue with two Stacks
 ----------
