@@ -170,11 +170,11 @@ of iterators are possible. For example, each container type (such as a list) has
 to iterate through its elements. Notice that while a pointer is a form of iterator, not all iterators have the same 
 functionality of pointers.</p>
 <p>We will learn about the built-in iterator class for the C++ list class. You can think of this iterator as a super-powered
-<code>Node* ptr</code> which will automatically switch to the next node if you call ptr++. You can even iterate backwards using <code>ptr--;</code>
+<code>Node* ptr</code> which will automatically switch to the next node if you call <code>ptr++</code>. You can even iterate backwards using <code>ptr--;</code>
 Wow!</p>
 <p>Let's say you have a list called <code>myList</code>.
 You can call public member functions: <code>myList.begin()</code> and <code>myList.end()</code>.<code>myList.begin()</code> will return an iterator that points to the 
-list's <code>HEAD-&gt;next</code>. <code>myList.end();</code> returns an iterator that points to <code>TAIL</code>! Note: This iterator does NOT point to the last value in
+list's <code>HEAD-&gt;next</code>. <code>myList.end();</code> returns an iterator that points to <code>TAIL</code>! Note: This iterator does <em>NOT</em> point to the last value in
 your list!</p>
 <p>Here is an example of how you print the first element in myList using an iterator:</p>
 <pre><code class="cpp">#include &lt;iostream&gt;
