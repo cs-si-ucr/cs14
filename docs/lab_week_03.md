@@ -29,14 +29,19 @@ Exercise 2 - Iterators
 **Definition:** An iterator is any object that, pointing to some element in a range
 of elements (such as an array or a container), 
 has the ability to iterate through the elements of that range using a set of operators (with at least the 
-increment `++` and dereference `*` operators). The most obvious form of iterator is a pointer: A pointer can 
+increment `++` and dereference `*` operators).
+
+The most obvious form of iterator is a pointer: A pointer can 
 point to elements in an array, and can iterate through them using the increment operator `++`. But other kinds 
 of iterators are possible. For example, each container type (such as a list) has a specific iterator type designed 
 to iterate through its elements. Notice that while a pointer is a form of iterator, not all iterators have the same 
 functionality of pointers.
+
 We will learn about the built-in iterator class for the C++ list class. You can think of this iterator as a super-powered
 `Node* ptr` which will automatically switch to the next node if you call ptr++. You can even iterate backwards using `ptr--;`
-Wow! Let's say you have a list called `myList`.
+Wow!
+
+Let's say you have a list called `myList`.
 You can call public member functions: `myList.begin()` and `myList.end()`.` myList.begin()` will return an iterator that points to the 
 list's `HEAD->next`. `myList.end();` returns an iterator that points to `TAIL`! Note: This iterator does NOT point to the last value in
 your list!
@@ -57,8 +62,9 @@ int main()
     return 0;
 }
 ```
-Q1) What do you think is the output?
-Q2) Can you find 2 errors in the following code?
+**Q1)** What do you think is the output?
+
+**Q2)** Can you find 2 errors in the following code?
 
 ```cpp
 #include <iostream>
@@ -82,13 +88,15 @@ for (list<char>::iterator it = myList.begin(); it != myList.end(); ++it) {
     }
 ```
 
-Challenge1: Come up with code (just the main function) which will fill a list with integers 1 through 10.
-    Then, use ITERATORS to print the list in reverse order, separated by spaces!
-The list also have public member functions myList.remove(5). This automatically searches for the number
-and removes it from the list. But there is a function myList.insert(iter, 2), which does not find a number
+**Challenge 1)** Come up with code (just the main function) which will fill a list with integers 1 through 10.
+Then, use **_Iterators_** to print the list in reverse order, separated by spaces!
+
+*Hint:* The list also has public member functions `myList.remove(5)`. This automatically searches for the number
+and removes it from the list (not position 5). But there is a function `myList.insert(iter, 2)`, which does not find a number
 for you, you must find it with an iterator and then pass in the iterator. The insert function will then
 insert the value passed in at the position where the iterator points to, moving everthing else over.
-Challenge2) Write out only the lines of code needed to get the myList, that is already filled with
+
+**Challenge 2)** Write out only the lines of code needed to get the myList, that is already filled with
 numbers 1 through 10, and insert a ZERO after the FIVE.
 
 
