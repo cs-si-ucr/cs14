@@ -18,7 +18,14 @@ When creating the underlying array, feel free to set a max size of the array lik
 `int arr[10]; // Max Queue size`
 
 
-Exercise 1 - Queue with two Stacks
+Exercise 1.1. Exceptions
+----------
+Using what you have learned about exceptions, throw an exception when the user tries to call the `enqueue(int n);`
+function when the queue has hit its capacity (max size) or when the user tries to call `getFirst();` or `getLast();`
+on an empty queue.
+
+
+Exercise 2 - Queue with two Stacks
 ----------
 
 Your task is to implement a class called `Queue` using two stacks `std::stack`.
@@ -40,7 +47,7 @@ unsigned sz;  // the number of elements currently being used in Queue
 unsigned cap; // the size of Queue
 ```
 
-Exercise 1.1 - Template Queue
+Exercise 2.1 - Template Queue
 ----------
 
 Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types.
@@ -63,7 +70,7 @@ void Queue<T>::printAll()
     // ...
 }
 ```
-Exercise 1.2 - Exceptions
+Exercise 2.2 - Exceptions
 ----------
 
 Add an exception handler that throws a `runtime_error` object in the `pop_q()` and `push_q()` function that is caught and handled in the main program. 
