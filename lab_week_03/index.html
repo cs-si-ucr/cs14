@@ -94,11 +94,13 @@
         
             <li><a class="toctree-l3" href="#exercise-11-exceptions">Exercise 1.1. Exceptions</a></li>
         
-            <li><a class="toctree-l3" href="#exercise-2-queue-with-two-stacks">Exercise 2 - Queue with two Stacks</a></li>
+            <li><a class="toctree-l3" href="#exercise-2-iterators">Exercise 2 - Iterators</a></li>
         
-            <li><a class="toctree-l3" href="#exercise-21-template-queue">Exercise 2.1 - Template Queue</a></li>
+            <li><a class="toctree-l3" href="#exercise-3-queue-with-two-stacks">Exercise 3 - Queue with two Stacks</a></li>
         
-            <li><a class="toctree-l3" href="#exercise-22-exceptions">Exercise 2.2 - Exceptions</a></li>
+            <li><a class="toctree-l3" href="#exercise-31-template-queue">Exercise 3.1 - Template Queue</a></li>
+        
+            <li><a class="toctree-l3" href="#exercise-32-exceptions">Exercise 3.2 - Exceptions</a></li>
         
             <li><a class="toctree-l3" href="#example">Example</a></li>
         
@@ -157,7 +159,69 @@ int getLast();
 <p>Using what you have learned about exceptions, throw an exception when the user tries to call the <code>enqueue(int n);</code>
 function when the queue has hit its capacity (max size) or when the user tries to call <code>getFirst();</code> or <code>getLast();</code>
 on an empty queue.</p>
-<h2 id="exercise-2-queue-with-two-stacks">Exercise 2 - Queue with two Stacks</h2>
+<h2 id="exercise-2-iterators">Exercise 2 - Iterators</h2>
+<p><strong>Definition:</strong> An iterator is any object that, pointing to some element in a range
+of elements (such as an array or a container), 
+has the ability to iterate through the elements of that range using a set of operators (with at least the 
+increment <code>++</code> and dereference <code>*</code> operators). The most obvious form of iterator is a pointer: A pointer can 
+point to elements in an array, and can iterate through them using the increment operator <code>++</code>. But other kinds 
+of iterators are possible. For example, each container type (such as a list) has a specific iterator type designed 
+to iterate through its elements. Notice that while a pointer is a form of iterator, not all iterators have the same 
+functionality of pointers.
+We will learn about the built-in iterator class for the C++ list class. You can think of this iterator as a super-powered
+<code>Node* ptr</code> which will automatically switch to the next node if you call ptr++. You can even iterate backwards using <code>ptr--;</code>
+Wow! Let's say you have a list called <code>myList</code>.
+You can call public member functions: <code>myList.begin()</code> and <code>myList.end()</code>.<code>myList.begin()</code> will return an iterator that points to the 
+list's <code>HEAD-&gt;next</code>. <code>myList.end();</code> returns an iterator that points to <code>TAIL</code>! Note: This iterator does NOT point to the last value in
+your list!</p>
+<p>Here is an example of how you print the first element in myList using an iterator:</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+int main()
+{
+    list&lt;char&gt; myList;
+    myList.push_back('H');
+
+    list&lt;char&gt;::iterator iter;
+    iter = myList.begin();
+    cout &lt;&lt; *iter &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+
+<p>Q1) What do you think is the output?
+Q2) Can you find 2 errors in the following code?</p>
+<pre><code class="cpp">#include &lt;iostream&gt;
+#include &lt;list&gt;
+using namespace std;
+int main()
+{
+    list&lt;char&gt; myList;
+    myList.push_back('H');
+
+    list&lt;char&gt;::iterator iter;
+    iter = myList.end();
+    cout &lt;&lt; iter &lt;&lt; endl;
+    return 0;
+}
+</code></pre>
+
+<p>And this is how you "iterate" (use this word!) through a list using a for loop and iterators:</p>
+<pre><code class="cpp">for (list&lt;char&gt;::iterator it = myList.begin(); it != myList.end(); ++it) {
+        cout &lt;&lt; ' ' &lt;&lt; *it;
+    }
+</code></pre>
+
+<p>Challenge1: Come up with code (just the main function) which will fill a list with integers 1 through 10.
+    Then, use ITERATORS to print the list in reverse order, separated by spaces!
+The list also have public member functions myList.remove(5). This automatically searches for the number
+and removes it from the list. But there is a function myList.insert(iter, 2), which does not find a number
+for you, you must find it with an iterator and then pass in the iterator. The insert function will then
+insert the value passed in at the position where the iterator points to, moving everthing else over.
+Challenge2) Write out only the lines of code needed to get the myList, that is already filled with
+numbers 1 through 10, and insert a ZERO after the FIVE.</p>
+<h2 id="exercise-3-queue-with-two-stacks">Exercise 3 - Queue with two Stacks</h2>
 <p>Your task is to implement a class called <code>Queue</code> using two stacks <code>std::stack</code>.</p>
 <p>Public Methods</p>
 <pre><code class="cpp">Queue(int c = 256) {cap = c; sz = 0}
@@ -174,7 +238,7 @@ unsigned sz;  // the number of elements currently being used in Queue
 unsigned cap; // the size of Queue
 </code></pre>
 
-<h2 id="exercise-21-template-queue">Exercise 2.1 - Template Queue</h2>
+<h2 id="exercise-31-template-queue">Exercise 3.1 - Template Queue</h2>
 <p>Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types.
 <code>Queue</code> should now become:</p>
 <pre><code class="cpp">template&lt;typename T&gt;
@@ -195,7 +259,7 @@ void Queue&lt;T&gt;::printAll()
 }
 </code></pre>
 
-<h2 id="exercise-22-exceptions">Exercise 2.2 - Exceptions</h2>
+<h2 id="exercise-32-exceptions">Exercise 3.2 - Exceptions</h2>
 <p>Add an exception handler that throws a <code>runtime_error</code> object in the <code>pop_q()</code> and <code>push_q()</code> function that is caught and handled in the main program. 
 Determine what conditions in <code>pop_q()</code> and <code>push_q</code> would cause an exception to be thrown.
 When the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. </p>
