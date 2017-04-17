@@ -163,14 +163,16 @@ on an empty queue.</p>
 <p><strong>Definition:</strong> An iterator is any object that, pointing to some element in a range
 of elements (such as an array or a container), 
 has the ability to iterate through the elements of that range using a set of operators (with at least the 
-increment <code>++</code> and dereference <code>*</code> operators). The most obvious form of iterator is a pointer: A pointer can 
+increment <code>++</code> and dereference <code>*</code> operators).</p>
+<p>The most obvious form of iterator is a pointer: A pointer can 
 point to elements in an array, and can iterate through them using the increment operator <code>++</code>. But other kinds 
 of iterators are possible. For example, each container type (such as a list) has a specific iterator type designed 
 to iterate through its elements. Notice that while a pointer is a form of iterator, not all iterators have the same 
-functionality of pointers.
-We will learn about the built-in iterator class for the C++ list class. You can think of this iterator as a super-powered
+functionality of pointers.</p>
+<p>We will learn about the built-in iterator class for the C++ list class. You can think of this iterator as a super-powered
 <code>Node* ptr</code> which will automatically switch to the next node if you call ptr++. You can even iterate backwards using <code>ptr--;</code>
-Wow! Let's say you have a list called <code>myList</code>.
+Wow!</p>
+<p>Let's say you have a list called <code>myList</code>.
 You can call public member functions: <code>myList.begin()</code> and <code>myList.end()</code>.<code>myList.begin()</code> will return an iterator that points to the 
 list's <code>HEAD-&gt;next</code>. <code>myList.end();</code> returns an iterator that points to <code>TAIL</code>! Note: This iterator does NOT point to the last value in
 your list!</p>
@@ -190,8 +192,8 @@ int main()
 }
 </code></pre>
 
-<p>Q1) What do you think is the output?
-Q2) Can you find 2 errors in the following code?</p>
+<p><strong>Q1)</strong> What do you think is the output?</p>
+<p><strong>Q2)</strong> Can you find 2 errors in the following code?</p>
 <pre><code class="cpp">#include &lt;iostream&gt;
 #include &lt;list&gt;
 using namespace std;
@@ -213,13 +215,13 @@ int main()
     }
 </code></pre>
 
-<p>Challenge1: Come up with code (just the main function) which will fill a list with integers 1 through 10.
-    Then, use ITERATORS to print the list in reverse order, separated by spaces!
-The list also have public member functions myList.remove(5). This automatically searches for the number
-and removes it from the list. But there is a function myList.insert(iter, 2), which does not find a number
+<p><strong>Challenge 1)</strong> Come up with code (just the main function) which will fill a list with integers 1 through 10.
+Then, use <strong><em>Iterators</em></strong> to print the list in reverse order, separated by spaces!</p>
+<p><em>Hint:</em> The list also has public member functions <code>myList.remove(5)</code>. This automatically searches for the number
+and removes it from the list (not position 5). But there is a function <code>myList.insert(iter, 2)</code>, which does not find a number
 for you, you must find it with an iterator and then pass in the iterator. The insert function will then
-insert the value passed in at the position where the iterator points to, moving everthing else over.
-Challenge2) Write out only the lines of code needed to get the myList, that is already filled with
+insert the value passed in at the position where the iterator points to, moving everthing else over.</p>
+<p><strong>Challenge 2)</strong> Write out only the lines of code needed to get the myList, that is already filled with
 numbers 1 through 10, and insert a ZERO after the FIVE.</p>
 <h2 id="exercise-3-queue-with-two-stacks">Exercise 3 - Queue with two Stacks</h2>
 <p>Your task is to implement a class called <code>Queue</code> using two stacks <code>std::stack</code>.</p>
