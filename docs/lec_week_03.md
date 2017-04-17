@@ -33,7 +33,40 @@ Problem 3
 ---------
 
 ```cpp
-void f3(std::stack<int>& s) {
+void f3(int n, int m, int r) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = m; m > 0; m /= 2) {
+            while (r > 0) {
+                std::cout << r << std::endl;
+                --r;
+            }
+        }
+    }
+}
+```
+
+Problem 4
+---------
+
+```cpp
+void f4(std::vector<int>& v) {
+    for (std::vector<int>::iterator itr = v.begin(); itr != v.end(); ++itr) {
+        std::random_shuffle(itr, v.end());
+        for (auto itr2 = v.begin(); itr2 != v.end(); ++itr2) {
+            std::cout << *itr2 << ' ';
+        }
+        std::cout << std::endl;
+    }
+    std::sort(v.begin(), v.end());
+}
+```
+
+
+Problem 5 
+---------
+
+```cpp
+void f5(std::stack<int>& s) {
     if (s.empty()) return;
     std::stack<int> temp;
     int min;
@@ -57,17 +90,17 @@ void f3(std::stack<int>& s) {
 }
 ```
 
-Problem 4
+Problem 6 
 ---------
 
-For this problem just give the Big-O time complexity for `f4`
+For this problem just give the Big-O time complexity for `f6`
 
-Bonus: What is the Big-O space complexity for `f4`?
+Bonus: What is the Big-O space complexity for `f6`?
 
 ```cpp
 
 
-void f4(std::queue<int>& q) {
+void f6(std::queue<int>& q) {
     if (q.size() <= 1) return;
     std::queue<int> left;
     std::queue<int> right;
@@ -79,16 +112,16 @@ void f4(std::queue<int>& q) {
         right.push(q.front());
         q.pop();
     }
-    f4(left);
-    f4(right);
-    q = f5(left, right);
+    f6(left);
+    f6(right);
+    q = f7(left, right);
 }
 
-std::queue<int> f5(std::queue<int>& left, std::queue<int>& right){
+std::queue<int> f7(std::queue<int>& left, std::queue<int>& right){
     std::queue<int> result;
     while(!left.empty() && !right.empty()) {
         if (left.front() > right.front()) {
-            result.push(right.front());
+            resulti.push(right.front());
             right.pop();
         }
         else {
