@@ -38,12 +38,12 @@ to iterate through its elements. Notice that while a pointer is a form of iterat
 functionality of pointers.
 
 We will learn about the built-in iterator class for the C++ list class. You can think of this iterator as a super-powered
-`Node* ptr` which will automatically switch to the next node if you call ptr++. You can even iterate backwards using `ptr--;`
+`Node* ptr` which will automatically switch to the next node if you call `ptr++`. You can even iterate backwards using `ptr--;`
 Wow!
 
 Let's say you have a list called `myList`.
 You can call public member functions: `myList.begin()` and `myList.end()`.` myList.begin()` will return an iterator that points to the 
-list's `HEAD->next`. `myList.end();` returns an iterator that points to `TAIL`! Note: This iterator does NOT point to the last value in
+list's `HEAD->next`. `myList.end();` returns an iterator that points to `TAIL`! Note: This iterator does _NOT_ point to the last value in
 your list!
 
 Here is an example of how you print the first element in myList using an iterator:
