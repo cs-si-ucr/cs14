@@ -80,7 +80,7 @@ void f5(std::stack<int>& s) {
             }
             else temp.push(s.top());
             s.pop();
-        }i
+        }
         s.push(min);
         while(!temp.empty()) {
             s.push(temp.top());
