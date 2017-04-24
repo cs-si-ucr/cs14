@@ -1,112 +1,38 @@
-Lab 3: Templates and Exceptions
+
+Lab 4: Binary Trees
 ===================================
 
-Exercise 1 - Queue with two Stacks
+Exercise 1- Using BST's
+----------
+To help you understand how a Binary Search Tree works, we've gone ahead and written a BST class which you can get by
+copying and pasting the following command into your cloud 9 terminal: `git clone https://github.com/gpric001/cs14 `
+
+After downloading the files, you will notice an empty main.cpp and BST object and header files. Using this main
+template, perform the following tasks
+
+*
+
+When creating the underlying array, feel free to set a max size of the array like so:
+`int arr[10]; // Max Queue size`
+
+
+Exercise 1.1. Num Nodes
+----------
+Using the provided BST code, implement a function `numNodes();` that returns the total number of nodes in the BST.
+
+Exercise 1.2 - Depth
+-----------
+For this excercise, write a function `depth(Node*);` that returns the depth of the node passed in in the tree.
+
+Exercise 1.3 - Child Swap
 ----------
 
-Your task is to implement a class called `Queue` using two stacks `std::stack`.
+No, this is not the latest reality TV show
 
-Public Methods
-```cpp
-Queue(int c = 256) {cap = c; sz = 0}
-void printAll()
-void push_q(data_type t)
-data_type pop_q() // removes and returns the top element
-bool isEmpty() 
-```
+![alt text](https://d1b10bmlvqabco.cloudfront.net/attach/j129btc6ipp515/h7ks2ibk8jg6s3/j1hydurqd650/Queues.pdf)
 
-Private Data Fields
-```cpp
-stack<data_type> s1;
-stack<data_type> s2;
-unsigned sz;  // the number of elements currently being used in Queue
-unsigned cap; // the size of Queue
-```
-
-Exercise 1.1 - Template Queue
-----------
-
-Take your completed queue class and create a queue template to allow your class to have members that use template parameters as types.
-`Queue` should now become:
-```cpp
-template<typename T>
-class Queue
-{
-	public:
-	    // ...	
-	private: 
-        // ...
-};
-```
-and `printAll()` should now become:
-```cpp
-template<typename T>
-void Queue<T>::printAll()
-{
-    // ...
-}
-```
-Exercise 1.2 - Exceptions
-----------
-
-Add an exception handler that throws a `runtime_error` object in the `pop_q()` and `push_q()` function that is caught and handled in the main program. 
-Determine what conditions in `pop_q()` and `push_q` would cause an exception to be thrown.
-When the exception is caught in the main program, print the error message passed by throw statement and continue the program. Do not terminate. 
-
-`main` should look like the following:
-```cpp
-int main()
-{
-  	string s = "abcde";
-    Queue<char> q(s.size());
-    try 
-    {
-        // ...
-    }
-    catch ( ... )
-    {
-       // ...
-    }
-    
-    return 0;
-}
-```
-
-Example
-----------
-Exceptions are not implemented in this example.
-
-```cpp
-int main()
-{
-	string s = "abcde";
-	Queue<char> q(s.size());
-	for(unsigned i = 0; i < s.size(); ++i)
-	{
-		q.push_q(s.at(i));
-	}
-	q.printAll();
-
-	for(unsigned i = 0; i < 3; ++i)
-	{
-		q.pop_q();
-		q.printAll();
-	}
-	q.push_q('x');
-	q.printAll();
-	q.push_q('y');
-	q.printAll();
-    
-    return 0;
-}
-```
-
-Output (first element is the top element): 
-```cpp
-a b c d e 
-b c d e 
-c d e 
-d e 
-d e x 
-d e x y 
-```
+Your task is to implement a function that swaps the left and right child of each node in the tree. For example, 
+![alt text] (http://www.geeksforgeeks.org/wp-content/uploads/2009/06/MirrorTree1.GIF)
+In the image you can see how the node `3` was once the left child of node `1` and node `2` was the right 
+child of node `1`. However, after the swap we can now see that nodes `3` and `2` have switched places, 
+as well as any of the other nodes in the tree (nodes `4` and `5`).
