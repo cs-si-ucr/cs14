@@ -19,11 +19,11 @@ template, perform the following tasks
 
 Exercise 1.1. Num Nodes
 ----------
-Using the provided BST code, implement a function `numNodes();` that returns the total number of nodes in the BST.
+Using the provided BST code, implement a function `numNodes(Node*);` that returns the total number of nodes in the BST.
 
 Exercise 1.2 - Depth
 -----------
-For this excercise, write a function `depth(Node*);` that returns the depth of the node passed in in the tree.
+For this excercise, write a function `depth(Node*, unsigned);` that returns the depth of the node passed in in the tree.
 To review, the 'Depth' of a node is defined as the number of ancestors for any given node. In the following tree,
 
 ![alt text] (https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/200px-Binary_search_tree.svg.png)
