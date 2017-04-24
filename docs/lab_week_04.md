@@ -48,7 +48,8 @@ as well as any of the other nodes in the tree (nodes `4` and `5`).
 
 Exercise 1.4 - Tree Merge
 ------------
-In this excercise, create a function `mergeTrees(BST one, BST two)` that takes in two BST's and 'merges' them together. That is 
+In this excercise, create a function `mergeTrees(Node* treeOne, Node* treeTwo)` that takes in two `Node*`'s 
+to the head of two different treees and 'merges' the two trees together. That is 
 to say that take all the nodes from tree one, and add them appropriately to the tree with a inorder traversal.
 For example, if the tree you are trying to add looks like:
 
