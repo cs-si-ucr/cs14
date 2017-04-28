@@ -5,6 +5,6 @@ SI Mock Midterm!
 
 Click on the following words to go to the [SI Mock Midterm!][midterm]
 
-Ask your SI leader for the answers, the answer key will be posted by Friday, 4/28!
+Click on the following words to see the [Mock Midterm Answer Key!][answerKey]
 
 **Good luck!!**
