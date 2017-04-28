@@ -287,12 +287,12 @@
         },
         {
             "location": "/midterm/",
-            "text": "SI Mock Midterm!\n\n\nClick on the following words to go to the \nSI Mock Midterm!\n\n\nAsk your SI leader for the answers, the answer key will be posted by Friday, 4/28!\n\n\nGood luck!!",
+            "text": "SI Mock Midterm!\n\n\nClick on the following words to go to the \nSI Mock Midterm!\n\n\nClick on the following words to see the \nMock Midterm Answer Key!\n\n\nGood luck!!",
             "title": "Mock Midterm Week 5"
         },
         {
             "location": "/midterm/#si-mock-midterm",
-            "text": "Click on the following words to go to the  SI Mock Midterm!  Ask your SI leader for the answers, the answer key will be posted by Friday, 4/28!  Good luck!!",
+            "text": "Click on the following words to go to the  SI Mock Midterm!  Click on the following words to see the  Mock Midterm Answer Key!  Good luck!!",
             "title": "SI Mock Midterm!"
         }
     ]
