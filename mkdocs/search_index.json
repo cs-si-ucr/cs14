@@ -294,6 +294,31 @@
             "location": "/midterm/#si-mock-midterm",
             "text": "Click on the following words to go to the  SI Mock Midterm!  Click on the following words to see the  Mock Midterm Answer Key!  Good luck!!",
             "title": "SI Mock Midterm!"
+        },
+        {
+            "location": "/lab_week_05/",
+            "text": "Lab 5: Binary Tree Applications\n\n\nTo do this excercise, first type into your terminal the following command:\n\ngit clone https://github.com/Andre-Castro/cs14\n. You should now see a folder with multiple .h,\n.o and one main.cpp file.\n\n\nExercise 1 - Arithmetic Expression Trees\n\n\nUsing the files provided for you from the git clone, we will be working with an arithmetic expression tree\n(If you have had lab for this week, yes it is the same arithemetic expression trees you will be using in lab!).\n\n\nCreate a function \nevaluate()\n that takes the expression and evaluates the result.\nFor example, given the expression: \n\"1+5/2*4+3-1\"\n, the evaluation shold return 10 (using integer division).\n\n\nExcercise 1.1 - More Arithmetic Expression Tree examples:\n\n\nExcercise 2 - Huffman Trees\n\n\nFor the following excercises we will be working with the dowlonaded Huffman Tree files.",
+            "title": "Lab Week 5"
+        },
+        {
+            "location": "/lab_week_05/#lab-5-binary-tree-applications",
+            "text": "To do this excercise, first type into your terminal the following command: git clone https://github.com/Andre-Castro/cs14 . You should now see a folder with multiple .h,\n.o and one main.cpp file.",
+            "title": "Lab 5: Binary Tree Applications"
+        },
+        {
+            "location": "/lab_week_05/#exercise-1-arithmetic-expression-trees",
+            "text": "Using the files provided for you from the git clone, we will be working with an arithmetic expression tree\n(If you have had lab for this week, yes it is the same arithemetic expression trees you will be using in lab!).  Create a function  evaluate()  that takes the expression and evaluates the result.\nFor example, given the expression:  \"1+5/2*4+3-1\" , the evaluation shold return 10 (using integer division).",
+            "title": "Exercise 1 - Arithmetic Expression Trees"
+        },
+        {
+            "location": "/lab_week_05/#excercise-11-more-arithmetic-expression-tree-examples",
+            "text": "",
+            "title": "Excercise 1.1 - More Arithmetic Expression Tree examples:"
+        },
+        {
+            "location": "/lab_week_05/#excercise-2-huffman-trees",
+            "text": "For the following excercises we will be working with the dowlonaded Huffman Tree files.",
+            "title": "Excercise 2 - Huffman Trees"
         }
     ]
 }
