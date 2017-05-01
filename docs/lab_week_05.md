@@ -53,12 +53,17 @@ use an online tool.
 1. Make a secret message for the person next to you! Please try to keep it short 
        (like 1-3 short words). and try not to use too many different letters otherwise it 
        will be crazy for your partner!
+
 2. Go to http://huffman.ooz.ie/
+
 3. Type in your message and then click "generate a tree" at the top. 
+
 4. Now encode your messsage by looking at the codes at each leaf of your tree. Send the picture
        of your tree and your secret message of zeros and ones to your partner!
+
 5. Now you should have someone else's tree and secret message. Make the tree in C++! internal 
        nodes do not need any value just the leaves which should have the letter as a string.
+
 6. Lastly, make a function called Decode() that takes in a string of zeros and ones and prints
        the decoded message! Read the "introduction" section above to see how the tree is used to decode
     (Go left if you see a zero and go right if you see a one).
