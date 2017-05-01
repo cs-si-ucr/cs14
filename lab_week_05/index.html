@@ -111,8 +111,6 @@
         
             <li><a class="toctree-l3" href="#huffman-trees">Huffman Trees</a></li>
         
-            <li><a class="toctree-l3" href="#introduction">Introduction</a></li>
-        
             <li><a class="toctree-l3" href="#exercise-2">Exercise 2</a></li>
         
         </ul>
@@ -164,7 +162,7 @@
 For example, given the expression: <code>"1+5/2*4+3-1"</code>, the evaluation shold return 10 (using integer division).</p>
 <h2 id="excercise-11-more-arithmetic-expression-tree-examples">Excercise 1.1 - More Arithmetic Expression Tree examples:</h2>
 <h2 id="huffman-trees">Huffman Trees</h2>
-<h2 id="introduction">Introduction</h2>
+<h4 id="introduction">Introduction</h4>
 <p><strong>Huffman coding</strong> is a lossless data compression algorithm. The idea is to assign variable-length 
 codes to input characters, lengths of the assigned codes are based on the frequencies of 
 corresponding characters. The most frequent character gets the smallest code and the least frequent 
@@ -181,8 +179,8 @@ Well, anyway the point of Huffman coding is so that when you convert your messag
 into a long list of zeros and ones, it will be <strong>as short as possible</strong>, otherwise known as 
 <strong>optimal</strong>. The coding scheme is different for every message. There are usually more than one
 way to make the Huffman tree. Here is how the tree looks like for our example:
-<img alt="alt text" src="https://www.nayuki.io/res/reference-huffman-coding/code-tree-model.png" />
-The whole point of the tree is so that we can traverse it like a BST! To decode the message,
+<img alt="alt text" src="https://www.nayuki.io/res/reference-huffman-coding/code-tree-model.png" /></p>
+<p>The whole point of the tree is so that we can traverse it like a BST! To decode the message,
 Make a for loop that iterates through the string "10110". You start at the root, 
 then <strong>go left if you see a '0' or go right if you see a '1'</strong>. Try it by tracing through the tree!
 The first character in "10110" is a '1' so let's start at the root and then go RIGHT.
@@ -191,16 +189,16 @@ letter is 'A'. Cool, huh?</p>
 <h2 id="exercise-2">Exercise 2</h2>
 <p>Ok, you don't have to worry about the Huffman encoding (you'll learn that in CS141). So we'll
 use an online tool.
-<strong>1)</strong> Make a secret message for the person next to you! Please try to keep it short 
+1. Make a secret message for the person next to you! Please try to keep it short 
        (like 1-3 short words). and try not to use too many different letters otherwise it 
        will be crazy for your partner!
-<strong>2)</strong> Go to http://huffman.ooz.ie/
-<strong>3)</strong> Type in your message and then click "generate a tree" at the top. 
-<strong>4)</strong> Now encode your messsage by looking at the codes at each leaf of your tree. Send the picture
+2. Go to http://huffman.ooz.ie/
+3. Type in your message and then click "generate a tree" at the top. 
+4. Now encode your messsage by looking at the codes at each leaf of your tree. Send the picture
        of your tree and your secret message of zeros and ones to your partner!
-<strong>4)</strong> Now you should have someone else's tree and secret message. Make the tree in C++! internal 
+5. Now you should have someone else's tree and secret message. Make the tree in C++! internal 
        nodes do not need any value just the leaves which should have the letter as a string.
-<strong>5)</strong> Lastly, make a function called Decode() that takes in a string of zeros and ones and prints
+6. Lastly, make a function called Decode() that takes in a string of zeros and ones and prints
        the decoded message! Read the "introduction" section above to see how the tree is used to decode
     (Go left if you see a zero and go right if you see a one).</p>
               
