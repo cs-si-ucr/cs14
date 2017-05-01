@@ -14,9 +14,6 @@ Using the files provided for you from the git clone, we will be working with an 
 Create a function `evaluate()` that takes the expression and evaluates the result.
 For example, given the expression: `"1+5/2*4+3-1"`, the evaluation shold return 10 (using integer division).
 
-Excercise 1.1 - More Arithmetic Expression Tree examples:
-----------
-
 Huffman Trees
 -------------
 
