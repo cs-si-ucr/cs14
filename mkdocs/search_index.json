@@ -324,6 +324,21 @@
             "location": "/lab_week_05/#exercise-2",
             "text": "Ok, you don't have to worry about the Huffman encoding (you'll learn that in CS141). So we'll\nuse an online tool.\n1. Make a secret message for the person next to you! Please try to keep it short \n       (like 1-3 short words). and try not to use too many different letters otherwise it \n       will be crazy for your partner!    Go to http://huffman.ooz.ie/    Type in your message and then click \"generate a tree\" at the top.     Now encode your messsage by looking at the codes at each leaf of your tree. Send the picture\n       of your tree and your secret message of zeros and ones to your partner!    Now you should have someone else's tree and secret message. Make the tree in C++! internal \n       nodes do not need any value just the leaves which should have the letter as a string.    Lastly, make a function called Decode() that takes in a string of zeros and ones and prints\n       the decoded message! Read the \"introduction\" section above to see how the tree is used to decode\n    (Go left if you see a zero and go right if you see a one).",
             "title": "Exercise 2"
+        },
+        {
+            "location": "/lab_week_06/",
+            "text": "Lab 5: Binary Tree Applications\n\n\nTo do the following excercises, first type into your terminal the following command:\n\ngit clone https://github.com/Andre-Castro/cs14Spr17Week6\n. You should now see a folder with a single\n.h file and a single .o file.\n\n\nExercise 1 - Remove\n\n\nMake a function \nvoid remove(const string &);\n that removes the node with the specified value from the tree.\n\nBe sure\n to keep the properties of an balanced tree. \n\n\nFor example, in the following tree:\n![alt-text]:https://github.com/Andre-Castro/cs14Spr17Week6/blob/master/j.jpg\n\n\nThe removal of node f would look like:\n\n\nAnd the subsequent remval of nodes \ne\n and \ng\n would look like:\n\n\nFor more help on AVL Tree deletions check out the following link: \nAVL Tree Deletions",
+            "title": "Lab Week6"
+        },
+        {
+            "location": "/lab_week_06/#lab-5-binary-tree-applications",
+            "text": "To do the following excercises, first type into your terminal the following command: git clone https://github.com/Andre-Castro/cs14Spr17Week6 . You should now see a folder with a single\n.h file and a single .o file.",
+            "title": "Lab 5: Binary Tree Applications"
+        },
+        {
+            "location": "/lab_week_06/#exercise-1-remove",
+            "text": "Make a function  void remove(const string &);  that removes the node with the specified value from the tree. Be sure  to keep the properties of an balanced tree.   For example, in the following tree:\n![alt-text]:https://github.com/Andre-Castro/cs14Spr17Week6/blob/master/j.jpg  The removal of node f would look like:  And the subsequent remval of nodes  e  and  g  would look like:  For more help on AVL Tree deletions check out the following link:  AVL Tree Deletions",
+            "title": "Exercise 1 - Remove"
         }
     ]
 }
