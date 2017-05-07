@@ -15,7 +15,7 @@ rotation when rebalancing?
 
 The following questions are in regard to the AVL Tree below.
 
-![AVL Tree](https://github.com/gpric001/cs14/blob/master/tree.png "AVL Tree")
+![AVL Tree](https://raw.githubusercontent.com/gpric001/cs14/master/tree.png)
 
     
 **Question 3**<br>
