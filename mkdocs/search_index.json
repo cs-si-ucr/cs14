@@ -327,7 +327,7 @@
         },
         {
             "location": "/lab_week_06/",
-            "text": "Lab 5: Binary Tree Applications\n\n\nTo do the following excercises, first type into your terminal the following command:\n\ngit clone https://github.com/Andre-Castro/cs14Spr17Week6\n. You should now see a folder with a single\n.h file and a single .o file.\n\n\nExercise 1 - Remove\n\n\nMake a function \nvoid remove(const string &);\n that removes the node with the specified value from the tree.\n\nBe sure\n to keep the properties of an balanced tree. \n\n\nFor example, in the following tree:\n\n\n\nThe removal of node f would look like:\n\n\nAnd the subsequent remval of nodes \ne\n and \ng\n would look like:\n\n\nFor more help on AVL Tree deletions check out the following link: \nAVL Tree Deletions",
+            "text": "Lab 5: Binary Tree Applications\n\n\nTo do the following excercises, first type into your terminal the following command:\n\ngit clone https://github.com/Andre-Castro/cs14Spr17Week6\n. You should now see a folder with a single\n.h file and a single .o file.\n\n\nExercise 1 - Remove\n\n\nMake a function \nvoid remove(const string &);\n that removes the node with the specified value from the tree.\n\nBe sure\n to keep the properties of an balanced tree. \n\n\nFor example, in the following tree:\n\n\n\n\nThe removal of node f would look like:\n\n\n\n\nAnd the subsequent remval of nodes \ne\n and \ng\n would look like:\n\n\n\n\nFor more help on AVL Tree deletions check out the following link: \nAVL Tree Deletions",
             "title": "Lab Week6"
         },
         {
@@ -337,7 +337,7 @@
         },
         {
             "location": "/lab_week_06/#exercise-1-remove",
-            "text": "Make a function  void remove(const string &);  that removes the node with the specified value from the tree. Be sure  to keep the properties of an balanced tree.   For example, in the following tree:  The removal of node f would look like:  And the subsequent remval of nodes  e  and  g  would look like:  For more help on AVL Tree deletions check out the following link:  AVL Tree Deletions",
+            "text": "Make a function  void remove(const string &);  that removes the node with the specified value from the tree. Be sure  to keep the properties of an balanced tree.   For example, in the following tree:   The removal of node f would look like:   And the subsequent remval of nodes  e  and  g  would look like:   For more help on AVL Tree deletions check out the following link:  AVL Tree Deletions",
             "title": "Exercise 1 - Remove"
         }
     ]
