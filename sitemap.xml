@@ -3,7 +3,7 @@
 
     
     <url>
-     <loc>None/</loc>
+     <loc>/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -11,7 +11,7 @@
 
     
     <url>
-     <loc>None/lec_week_02/</loc>
+     <loc>/lec_week_02/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -19,61 +19,7 @@
 
     
     <url>
-     <loc>None/lab_week_02/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>None/lec_week_03/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/lec_week_03_pt2/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>None/lec_week_03_pt3/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>None/lab_week_03/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/lab_week_04/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/midterm/</loc>
-     <lastmod>2017-05-07</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/lab_week_05/</loc>
+     <loc>/lab_week_02/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -82,7 +28,19 @@
     
         
     <url>
-     <loc>None/lec_week_06/</loc>
+     <loc>/lec_week_03/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lec_week_03_pt2/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>/lec_week_03_pt3/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -91,7 +49,49 @@
 
     
     <url>
-     <loc>None/lab_week_06/</loc>
+     <loc>/lab_week_03/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/lab_week_04/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/midterm/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+    <url>
+     <loc>/lab_week_05/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
+        
+    <url>
+     <loc>/lec_week_06/</loc>
+     <lastmod>2017-05-07</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+    <url>
+     <loc>/lab_week_06/</loc>
      <lastmod>2017-05-07</lastmod>
      <changefreq>daily</changefreq>
     </url>
