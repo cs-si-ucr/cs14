@@ -1,11 +1,14 @@
 
-Lab 5: Binary Tree Applications
+Lab 5: AVL Trees
 ===================================
 [AVLDelete]:http://www.mathcs.emory.edu/~cheung/Courses/323/Syllabus/Trees/AVL-delete.html
+[AVLCheck]:https://www.cs.usfca.edu/~galles/visualization/AVLtree.html
 
 To do the following excercises, first type into your terminal the following command:
 `git clone https://github.com/Andre-Castro/cs14Spr17Week6`. You should now see a folder with a single
 .h file and a single .o file.
+
+Feel free to use the following site to double check the correctnes of your AVL Trees: [Click me!][AVLCheck] 
 
 Exercise 1 - Remove
 ----------
