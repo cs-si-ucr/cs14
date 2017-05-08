@@ -35,12 +35,12 @@ Part II: 2-3 Trees
 2-3 Trees are trees that have properties that keep it **balanced** and ordered. The benefit of this 
 is that traversal algorithms will always have a worst case runtime of O(log(n)). Unlike a generic
 tree, this tree will never end up looking like a diagonal linked list. This is great if you have
-a lot of data and want to search through it quicikly! 
+a lot of data and want to search through it quicikly! <br> 
 **Some properties include:**
 
-* All leaves are always on the same level (bottom).
-* Each node can have up to **2** values and up to **3** children.
-* There can not exist a parent with only 1 child (unbalanced).
+* All leaves are always on the same level (bottom)
+* Each node can have up to **2** values and up to **3** children
+* There can not exist a parent with only 1 child (unbalanced)
 
 Insertion Exercises
 -------------------
