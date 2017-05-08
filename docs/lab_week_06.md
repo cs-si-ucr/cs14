@@ -25,6 +25,6 @@ The removal of node f would look like:
 
 And the subsequent remval of nodes `e` and `g` would look like:
 
-![alt-text] (https://github.com/Andre-Castro/cs14Spr17Week6/blob/master/j3.jpg?raw=true)
+![alt-text] (https://github.com/Andre-Castro/cs14Spr17Week6/blob/master/j3.png?raw=true)
 
 For more help on AVL Tree deletions check out the following link: [AVL Tree Deletions][AVLDelete]
