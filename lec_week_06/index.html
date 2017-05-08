@@ -113,6 +113,9 @@
     <li class="toctree-l3"><a href="#part-i-avl-trees">Part I: AVL Trees</a></li>
     
 
+    <li class="toctree-l3"><a href="#part-ii-2-3-trees">Part II: 2-3 Trees</a></li>
+    
+
     </ul>
                 </li>
     </ul>
@@ -181,6 +184,34 @@ draw the relevant sections of the tree after each operation.<br></p>
 <code>tree.insert(37);</code><br>
 <code>tree.insert(39);</code><br></p>
 </blockquote>
+<h1 id="part-ii-2-3-trees">Part II: 2-3 Trees</h1>
+<p>2-3 Trees are trees that have properties that keep it <strong>balanced</strong> and ordered. The benefit of this 
+is that traversal algorithms will always have a worst case runtime of O(log(n)). Unlike a generic
+tree, this tree will never end up looking like a diagonal linked list. This is great if you have
+a lot of data and want to search through it quicikly! 
+<strong>Some properties include:</strong>
+<em> All leaves are always on the same level (bottom).
+</em> Each node can have up to <strong>2</strong> values and up to <strong>3</strong> children.
+* There can not exist a parent with only 1 child (unbalanced).
+Insertion Exercises</p>
+<hr />
+<p>Here is a BST that had the numbers 39 through 32 inserted.
+<img alt="alt text" src="https://image.ibb.co/fDrT5k/BST.jpg" />
+redraw the tree without the gray insertions and reinsert 39 through 32 (in descending order)
+as a 2-3 tree.
+<strong>Hint 1:</strong> After inserting 36, the root should have 2 values and 3 children.
+<strong>Hint 2:</strong> After inserting 32, the tree should have a height of 3.
+Deleting Exercises</p>
+<hr />
+<p><img alt="alt text" src="https://image.ibb.co/kUTmrQ/delete_1.jpg" />
+<img alt="alt text" src="https://image.ibb.co/hU4gQk/delete_2.jpg" />
+Now try deleting 100 from the following tree!
+<img alt="alt text" src="https://image.ibb.co/hR4brQ/delete_3.jpg" />
+Try it with strings!
+<img alt="alt text" src="https://image.ibb.co/jCguT5/string_insert.jpg" />
+<img alt="alt text" src="https://image.ibb.co/mciDMQ/string_insert_answer.jpg" />
+Removal Exercises</p>
+<hr />
               
             </div>
           </div>
