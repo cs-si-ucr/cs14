@@ -29,6 +29,7 @@ draw the relevant sections of the tree after each operation.<br>
 > `tree.insert(37);`<br>
 >` tree.insert(39);`<br>
 
+Use the following site to verify your AVL Trees: [Click me!][AVLCheck] 
 
 Part II: 2-3 Trees
 ================================
