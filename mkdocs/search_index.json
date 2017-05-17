@@ -394,31 +394,6 @@
             "location": "/lab_week_07/#stretch-goal-exercise", 
             "text": "Extend your  UnorderedSet  class to a  UnorderedMap  class! Use the same collision resolution method.  Implement the following class methods:  int count (const Key   k)\nValue   operator[](const Key * k) \nvoid remove(const Key   k)", 
             "title": "Stretch-Goal Exercise"
-        }, 
-        {
-            "location": "/lab_week_07/", 
-            "text": "Lab Week 6: Hash Tables\n\n\nExercise 1\n\n\n(Kinda) heap sort! Use \nstd::priority_queue\n to\nsort a vector in ascending order. \nstd::greater\n\nmay prove useful. \n\n\nHint2: Check out the Example at [cppreference Queue] - the top, pop and push operations can make this possible!(http://en.cppreference.com/w/cpp/container/priority_queue)\n\n\nvoid pq_sort(std::vector\nint\n \n v)\n\n\n\n\nExercise 2\n\n\nWrite a class called \nUnorderedSet\n with the following\npublic methods:\n\n\nNote: first we will test with \nstd::string\n instead\nof \nT\n. So in your code we should we should \ndeclare the following typedef: \ntypedef std::string T\n.\n\n\nint count(const T \n elem)\nvoid remove(const T \n elem) \nvoid insert(const T \n elem)\n\n\n\n\nYour implementation of UnorderedSet uses a \nhash table with 6159 buckets (\nsomewhat \narbitrary prime\n). For this exercise you will handle collisions \nusing the seperate chaining method, where each\nthe hash function mod the table size gives you a bucket\nand each bucket is a \nstd::list\n of keys.\n\n\nFor testing purposes, we will use the following\nnaive hash function:\n\n\nunsigned int str_hash(std::string s){\n    /*\n     * This hash simply adds up\n     * the ascii values of each character in\n     * the string.\n    */\n    unsigned int hash_val = 0;\n    unsigned int ascii_val = 0;\n    for (char c : s) {\n        ascii_val = static_cast\nunsigned int\n(c);\n        hash_val += ascii_val;\n    }\n    return hash_val;\n}\n\n\n\n\nUse the following print method to test your class! (assumes \n_buckets\n is the\nname of the array of buckets)\n\n\nvoid print() {\n   unsigned int used_buckets = 0;\n   unsigned int num_elems = 0;\n   for(unsigned int i = 0; i \n NUM_BUCKETS; ++i) {\n        const auto \n bucket = _buckets[i];\n        if(!bucket.empty()) {\n            ++used_buckets;\n            std::cout \n \nbucket #\n \n  i \n ':';\n            for(const auto \n elem: bucket) {\n                std::cout \n elem \n ',';\n                ++num_elems;\n            }\n            std::cout \n std::endl \n std::endl;\n        }\n   }\n   std::cout \n \nNumber of buckets used: \n \n used_buckets\n       \n '/'  \n NUM_BUCKETS  \n std::endl;\n   std::cout \n \nNumber of total elements: \n \n num_elems \n std::endl;\n}\n\n\n\n\n\n\nStretch-Goal Exercise\n\n\nExtend your \nUnorderedSet\n class to a \nUnorderedMap\n class! Use the same collision resolution method.\n\n\nImplement the following class methods:\n\n\nint count (const Key \n k)\nValue \n operator[](const Key * k) \nvoid remove(const Key \n k)", 
-            "title": "Lolll"
-        }, 
-        {
-            "location": "/lab_week_07/#lab-week-6-hash-tables", 
-            "text": "", 
-            "title": "Lab Week 6: Hash Tables"
-        }, 
-        {
-            "location": "/lab_week_07/#exercise-1", 
-            "text": "(Kinda) heap sort! Use  std::priority_queue  to\nsort a vector in ascending order.  std::greater \nmay prove useful.   Hint2: Check out the Example at [cppreference Queue] - the top, pop and push operations can make this possible!(http://en.cppreference.com/w/cpp/container/priority_queue)  void pq_sort(std::vector int    v)", 
-            "title": "Exercise 1"
-        }, 
-        {
-            "location": "/lab_week_07/#exercise-2", 
-            "text": "Write a class called  UnorderedSet  with the following\npublic methods:  Note: first we will test with  std::string  instead\nof  T . So in your code we should we should \ndeclare the following typedef:  typedef std::string T .  int count(const T   elem)\nvoid remove(const T   elem) \nvoid insert(const T   elem)  Your implementation of UnorderedSet uses a \nhash table with 6159 buckets ( somewhat \narbitrary prime ). For this exercise you will handle collisions \nusing the seperate chaining method, where each\nthe hash function mod the table size gives you a bucket\nand each bucket is a  std::list  of keys.  For testing purposes, we will use the following\nnaive hash function:  unsigned int str_hash(std::string s){\n    /*\n     * This hash simply adds up\n     * the ascii values of each character in\n     * the string.\n    */\n    unsigned int hash_val = 0;\n    unsigned int ascii_val = 0;\n    for (char c : s) {\n        ascii_val = static_cast unsigned int (c);\n        hash_val += ascii_val;\n    }\n    return hash_val;\n}  Use the following print method to test your class! (assumes  _buckets  is the\nname of the array of buckets)  void print() {\n   unsigned int used_buckets = 0;\n   unsigned int num_elems = 0;\n   for(unsigned int i = 0; i   NUM_BUCKETS; ++i) {\n        const auto   bucket = _buckets[i];\n        if(!bucket.empty()) {\n            ++used_buckets;\n            std::cout    bucket #     i   ':';\n            for(const auto   elem: bucket) {\n                std::cout   elem   ',';\n                ++num_elems;\n            }\n            std::cout   std::endl   std::endl;\n        }\n   }\n   std::cout    Number of buckets used:     used_buckets\n         '/'    NUM_BUCKETS    std::endl;\n   std::cout    Number of total elements:     num_elems   std::endl;\n}", 
-            "title": "Exercise 2"
-        }, 
-        {
-            "location": "/lab_week_07/#stretch-goal-exercise", 
-            "text": "Extend your  UnorderedSet  class to a  UnorderedMap  class! Use the same collision resolution method.  Implement the following class methods:  int count (const Key   k)\nValue   operator[](const Key * k) \nvoid remove(const Key   k)", 
-            "title": "Stretch-Goal Exercise"
         }
     ]
 }
