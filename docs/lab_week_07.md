@@ -6,8 +6,8 @@ command on c9 (or on the terminal) to get it.
 
 `git clone https://github.com/gpric001/cs14`
 
-You should now have a directory called cs14/w7 with the following files: *Person.h*
-,*UnorderedSet.h*, *UnorderedSet.cpp*, *main.cpp*, and *persondata.txt*.
+You should now have a directory called cs14/w7 with the following files: 
+*Person.h*, *UnorderedSet.h*, *UnorderedSet.cpp*, *main.cpp*, and *persondata.txt*.
 
 The *Person.h* file contains the Actor struct which has a variety of fields.
 The *UnorderedSet.h* file contains the basic interface of the UnorderedSet class.
@@ -29,9 +29,9 @@ of the UnorderedSet class must at least support the following public member
 functions:
 
 ```cpp
-int count(const Actor & elem)
-void remove(const Actor & elem) 
-void insert(const Actor & elem)
+int count(const Person& elem)
+void remove(const Person& elem) 
+void insert(const Person& elem)
 ```
 
 Review the files given for hints on how to implement this class. As always,
