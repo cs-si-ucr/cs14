@@ -10,11 +10,15 @@ You should now have a directory called cs14/w7 with the following files:
 *Person.h*, *UnorderedSet.h*, *UnorderedSet.cpp*, *main.cpp*, and *persondata.txt*.
 
 The *Person.h* file contains the Actor struct which has a variety of fields.
+
 The *UnorderedSet.h* file contains the basic interface of the UnorderedSet class.
+
 The *UnorderedSet.cpp* file is where you will be implmenting the UnorderedSet
 class.
+
 The *main.cpp* file is where you should write your tests. Right now it simply
 loads the person data into a vector.
+
 The *persondata.txt* file contains the raw person data
 
 Exercise 1
