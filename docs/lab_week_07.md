@@ -1,95 +1,56 @@
-Lab Week 6: Hash Tables
+Lab Week 7: Hash Tables
 =========================
 
+The following exercises require some code we have written. Execute the following
+command on c9 (or on the terminal) to get it.
+
+`git clone https://github.com/gpric001/cs14`
+
+You should now have a directory called cs14/w7 with the following files: *Person.h*
+,*UnorderedSet.h*, *UnorderedSet.cpp*, *main.cpp*, and *persondata.txt*.
+
+The *Person.h* file contains the Actor struct which has a variety of fields.
+The *UnorderedSet.h* file contains the basic interface of the UnorderedSet class.
+The *UnorderedSet.cpp* file is where you will be implmenting the UnorderedSet
+class.
+The *main.cpp* file is where you should write your tests. Right now it simply
+loads the person data into a vector.
+The *persondata.txt* file contains the raw person data
 
 Exercise 1
 ----------
-(Kinda) heap sort! Use `std::priority_queue` to
-sort a vector in ascending order. `std::greater`
-may prove useful. 
 
-Hint2: Check out the Example at [cppreference Queue] - the top, pop and push operations can make this possible!(http://en.cppreference.com/w/cpp/container/priority_queue)
+Our goal in this exercise is to implement an ADT that uses the ideas in class to
+hash Person structs. Hopefully we can attain O(1) insert and remove operations.
+
+Using the UnorderedSet class declartion in UnorderedSet.h, implement the the
+UnorderedSet class. Feel free to modify UnorderedSet.h but your implementation 
+of the UnorderedSet class must at least support the following public member
+functions:
 
 ```cpp
-void pq_sort(std::vector<int> & v)
+int count(const Actor & elem)
+void remove(const Actor & elem) 
+void insert(const Actor & elem)
 ```
+
+Review the files given for hints on how to implement this class. As always,
+if you are having trouble ask your neighbor or the SI leader for help.
 
 Exercise 2
 ----------
 
-Write a class called `UnorderedSet` with the following
-public methods:
+Write a test for your UnorderedSet class that reports how the elements are 
+distributed in your set. One way to do this is to sum the total number of
+elements in each bucket and divide by the total number of buckets that have at
+least one element.
 
-Note: first we will test with `std::string` instead
-of `T`. So in your code we should we should 
-declare the following typedef: `typedef std::string T`.
+If you use the above suggestion, what kind of output do you want to see for your
+test?
 
-```cpp
-int count(const T & elem)
-void remove(const T & elem) 
-void insert(const T & elem)
-```
-
-Your implementation of UnorderedSet uses a 
-hash table with 6159 buckets ([somewhat 
-arbitrary prime](http://www.orcca.on.ca/~yxie/courses/cs2210b-2011/htmls/extra/PlanetMath_%20goodhashtable.pdf)). For this exercise you will handle collisions 
-using the seperate chaining method, where each
-the hash function mod the table size gives you a bucket
-and each bucket is a `std::list` of keys.
-
-For testing purposes, we will use the following
-naive hash function:
-
-```cpp
-unsigned int str_hash(std::string s){
-    /*
-     * This hash simply adds up
-     * the ascii values of each character in
-     * the string.
-    */
-    unsigned int hash_val = 0;
-    unsigned int ascii_val = 0;
-    for (char c : s) {
-        ascii_val = static_cast<unsigned int>(c);
-        hash_val += ascii_val;
-    }
-    return hash_val;
-}
-```
-
-Use the following print method to test your class! (assumes `_buckets` is the
-name of the array of buckets)
-```cpp
-void print() {
-   unsigned int used_buckets = 0;
-   unsigned int num_elems = 0;
-   for(unsigned int i = 0; i < NUM_BUCKETS; ++i) {
-        const auto & bucket = _buckets[i];
-        if(!bucket.empty()) {
-            ++used_buckets;
-            std::cout << "bucket #" <<  i << ':';
-            for(const auto & elem: bucket) {
-                std::cout << elem << ',';
-                ++num_elems;
-            }
-            std::cout << std::endl << std::endl;
-        }
-   }
-   std::cout << "Number of buckets used: " << used_buckets
-       << '/'  << NUM_BUCKETS  << std::endl;
-   std::cout << "Number of total elements: " << num_elems << std::endl;
-}
-
-
-```
-
-Stretch-Goal Exercise 
+Exercise 3
 ----------
-Extend your `UnorderedSet` class to a `UnorderedMap` class! Use the same collision resolution method.
 
-Implement the following class methods:
-```cpp
-int count (const Key & k)
-Value & operator[](const Key * k) 
-void remove(const Key & k)
-```
+Implement the `resize()` public member function. `resize()` should double the 
+number of buckets if the load factor goes above a certain threshold. Do some
+quick research online to determine an appropriate load factor threshold.
