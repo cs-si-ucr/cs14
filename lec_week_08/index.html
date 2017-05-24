@@ -189,6 +189,19 @@ list no longer has values to sort.</p>
 <li>What would the lists look like when insertion sort runs in O(n^2) time? What about for O(n) time?</li>
 </ul>
 <h2 id="quick-sort">Quick Sort</h2>
+<p>Quick Sort, like Merge Sort, is a divide and conquer sorting algorithm. Similar in many ways to merge sort,
+it differs by the position where we choose the split the values in our list. In merge sort, the list is always
+split right down the middle, gauranteeing an <code>O(nlogn)</code> runtime. However, with quick sort, we can choose where
+we want to split the list, and can also split the list in multiple places. The places that we choose are
+called <code>pivots</code>.</p>
+<p><img alt="alt-text" src="https://s3.amazonaws.com/likeitlearnit/images/QuickSortLarge.png" /></p>
+<p>Quick Sort runs on average faster than a majority of the other sorts. However, with poorly chosen pivots,
+Quick Sort can run in <code>O(n^2)</code> time.</p>
+<p><strong>Excercises:</strong></p>
+<ul>
+<li>s</li>
+<li>u</li>
+</ul>
 <h2 id="in-place-and-stable-sorts">In Place and Stable Sorts</h2>
 <p>A sorting algorithm can be described with two different classifiers: "in-place" and "stable".</p>
 <p>A stable sorting algorithm is one that when comparing values that are equal, does not perform a swap.
