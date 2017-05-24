@@ -183,13 +183,19 @@ inserted has to be compared to the other values in the list. Since 1 is less tha
 sorted in ascending order, the two values <code>1</code> and <code>5</code> have to be swapped. This process is repeated until the
 list no longer has values to sort.</p>
 <p>This sort runs in <code>O(n^2)</code> time, but has an <code>O(n)</code> best case.</p>
-<p><em>Excercises:</em></p>
+<p><strong>Excercises:</strong></p>
 <ul>
 <li>Given a list: <code>0,9,4,2,7,4</code>, perform insertion sort on the list, showing each step of the way.</li>
 <li>What would the lists look like when insertion sort runs in O(n^2) time? What about for O(n) time?</li>
 </ul>
 <h2 id="quick-sort">Quick Sort</h2>
 <h2 id="in-place-and-stable-sorts">In Place and Stable Sorts</h2>
+<p>A sorting algorithm can be described with two different classifiers: "in-place" and "stable".</p>
+<p>A stable sorting algorithm is one that when comparing values that are equal, does not perform a swap.
+That is to say that the sorting algorithm is more stable because the values in the list do not change
+thier position if they are equal.</p>
+<p>An inplace sorting algorithm is one that sorts the values of the list within the list itself. It does
+not create another list to copy the values into, all the sorting is done within the list itself.</p>
               
             </div>
           </div>
