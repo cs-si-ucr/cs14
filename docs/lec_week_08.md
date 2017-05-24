@@ -16,9 +16,21 @@ list no longer has values to sort.
 
 This sort runs in `O(n^2)` time, but has an `O(n)` best case.
 
-Excercises:
+**Excercises:**
+
 * Given a list: `0,9,4,2,7,4`, perform insertion sort on the list, showing each step of the way.
 * What would the lists look like when insertion sort runs in O(n^2) time? What about for O(n) time?
 
+Quick Sort
+----------
+
 In Place and Stable Sorts
 ------------------------
+A sorting algorithm can be described with two different classifiers: "in-place" and "stable".
+
+A stable sorting algorithm is one that when comparing values that are equal, does not perform a swap.
+That is to say that the sorting algorithm is more stable because the values in the list do not change
+thier position if they are equal.
+
+An inplace sorting algorithm is one that sorts the values of the list within the list itself. It does
+not create another list to copy the values into, all the sorting is done within the list itself.
