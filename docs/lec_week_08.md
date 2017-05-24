@@ -23,6 +23,21 @@ This sort runs in `O(n^2)` time, but has an `O(n)` best case.
 
 Quick Sort
 ----------
+Quick Sort, like Merge Sort, is a divide and conquer sorting algorithm. Similar in many ways to merge sort,
+it differs by the position where we choose the split the values in our list. In merge sort, the list is always
+split right down the middle, gauranteeing an `O(nlogn)` runtime. However, with quick sort, we can choose where
+we want to split the list, and can also split the list in multiple places. The places that we choose are
+called `pivots`.
+
+![alt-text](https://s3.amazonaws.com/likeitlearnit/images/QuickSortLarge.png)
+
+Quick Sort runs on average faster than a majority of the other sorts. However, with poorly chosen pivots,
+Quick Sort can run in `O(n^2)` time.
+
+**Excercises:**
+
+* s
+* u
 
 In Place and Stable Sorts
 ------------------------
