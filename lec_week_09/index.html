@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Mock Midterm Week 5 - CS14 SI: Spring 2015</title>
+  <title>Lecture Week 9 - CS14 SI: Spring 2015</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Mock Midterm Week 5";
-    var mkdocs_page_input_path = "midterm.md";
-    var mkdocs_page_url = "/midterm/";
+    var mkdocs_page_name = "Lecture Week 9";
+    var mkdocs_page_input_path = "lec_week_09.md";
+    var mkdocs_page_url = "/lec_week_09/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -91,15 +91,9 @@
     <a class="" href="../lab_week_04/">Lab Week 4</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Mock Midterm Week 5</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#si-mock-midterm">SI Mock Midterm!</a></li>
-    
-
-    </ul>
+    <a class="" href="../midterm/">Mock Midterm Week 5</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -138,9 +132,21 @@
     <a class="" href="../lab_week_09/">Lab Week 9</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../lec_week_09/">Lecture Week 9</a>
+    <a class="current" href="./">Lecture Week 9</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#breadth-first-search-bfs">Breadth First Search (BFS)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#depth-first-search-dfs">Depth First Search (DFS)</a></li>
+    
+
+    <li class="toctree-l2"><a href="#djikstras-algorithm">Djikstra's Algorithm</a></li>
+    
+
+    </ul>
 	    </li>
           
         </ul>
@@ -165,7 +171,7 @@
     
       
     
-    <li>Mock Midterm Week 5</li>
+    <li>Lecture Week 9</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -175,10 +181,24 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="si-mock-midterm">SI Mock Midterm!</h2>
-<p>Click on the following words to go to the <a href="https://goo.gl/Q57M2G" title="Made by yours truly :)">SI Mock Midterm!</a></p>
-<p>Click on the following words to see the <a href="https://goo.gl/Bth7oH" title="Get them all right!">Mock Midterm Answer Key!</a></p>
-<p><strong>Good luck!!</strong></p>
+                <h1 id="breadth-first-search-bfs">Breadth First Search (BFS)</h1>
+<p>Just when you thought you were done with traverls after post, in and preorder, here are two more!! (For graphs).
+But don't fret, they are not that conceptually difficult.</p>
+<p>The first graph traversal you will learn about is "Breadth First Search" or <code>BFS</code> for short. BFS starts with a
+node in the graph, and traverses the graph by visiting all the nodes the shortest distance away first.
+Distance from a node to another node in graphs is the amount of edges between such nodes. Consider a BST with 
+the values 8, 7, and 6 inserted in that order (recall that a tree is just a unique type of graph). Starting at
+node 8, the amount of edges from node 8 to node 7 would be 1, making node 7 a distance of 1 away from node 8. 
+Node 6 on the other hand would be a distance of 2 away from node 8. Therefore, the BFS traversal of this BST
+would look like <code>8,7,6</code> since we started at node 8 and then visited the nodes closest next.</p>
+<p>If there are multiple nodes the same distance away, the order in which they are visited does not matter. So 
+a BST with values 8,7,6,9 inserted in that order would have nodes 9 and 7 both a distance of <code>1</code> away from node 8.
+However in the traversal of this tree, the results <code>8,7,9,6</code> and <code>8,9,7,6</code> are both valid BFS-es.  </p>
+<p>Consider the following graph:</p>
+<p>![alt-text]:(http://www.thecshandbook.com/public_html/img/uploads/graph.png)</p>
+<p>What would the BFS traversal of this graph look like if we started from node <code>1</code>? </p>
+<h1 id="depth-first-search-dfs">Depth First Search (DFS)</h1>
+<h1 id="djikstras-algorithm">Djikstra's Algorithm</h1>
               
             </div>
           </div>
@@ -186,10 +206,8 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../lab_week_05/" class="btn btn-neutral float-right" title="Lab Week 5">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../lab_week_04/" class="btn btn-neutral" title="Lab Week 4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../lab_week_09/" class="btn btn-neutral" title="Lab Week 9"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -215,10 +233,8 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../lab_week_04/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../lab_week_09/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../lab_week_05/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

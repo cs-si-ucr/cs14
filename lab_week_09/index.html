@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Lab Week 9 - CS14 SI: Spring 2015</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Lab Week 9";
+    var mkdocs_page_input_path = "lab_week_09.md";
+    var mkdocs_page_url = "/lab_week_09/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> CS14 SI: Spring 2015</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lec_week_02/">Lecture Week 2</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lab_week_02/">Lab Week 2</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lecture Week 3</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lec_week_03/">Big-O Analysis</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lec_week_03_pt2/">Exceptions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../lec_week_03_pt3/">Templates</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lab_week_03/">Lab Week 3</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lab_week_04/">Lab Week 4</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../midterm/">Mock Midterm Week 5</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lab_week_05/">Lab Week 5</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Lecture Week 6</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../lec_week_06/">AVL Trees</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lab_week_06/">Lab Week 6</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lab_week_07/">Lab Week 7</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lec_week_08/">Lecture Week 8</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Lab Week 9</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#lab-week-9-graphs">Lab Week 9: Graphs</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#implementation">Implementation</a></li>
+        
+            <li><a class="toctree-l3" href="#dfs-and-bfs">DFS and BFS</a></li>
+        
+            <li><a class="toctree-l3" href="#exercise-1">Exercise 1</a></li>
+        
+            <li><a class="toctree-l3" href="#exercise-2">Exercise 2</a></li>
+        
+            <li><a class="toctree-l3" href="#exercise-3">Exercise 3</a></li>
+        
+            <li><a class="toctree-l3" href="#stretch-goal-exercise">Stretch-goal exercise:</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../lec_week_09/">Lecture Week 9</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">CS14 SI: Spring 2015</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Lab Week 9</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="lab-week-9-graphs">Lab Week 9: Graphs</h1>
+<p>Graphs are defined as consisting of a set <code>V</code> of vertices
+and a set <code>E</code> of edges. Edges are further defined as being
+either an ordered pair of vertices (in the case of a directed
+graph), or an unordered pair (in the case of an undirected
+graph).</p>
+<h2 id="implementation">Implementation</h2>
+<p>The two primary ways that graphs are implemented are as an
+adjacency matrix or as an adjacency list. An adjacency matrix
+consists of a two dimensional array where the indices map to
+the vertices and the intersections between every pair of vertices
+indicate whether there is an edge connecting them and if so
+what the weight of that edge is (in the case of a weighted
+graph). The image below should help to illustrate this.</p>
+<p><img src="http://rosemary.umw.edu/~finlayson/class/spring13/cpsc230/notes/images/matrix.png"/></p>
+<p>This class definition should help give you an idea of where to
+start when implementing a graph as an adjacency matrix.</p>
+<pre><code class="cpp">class AdjacencyMatrix{
+    private:
+        int n;
+        int **adj;
+        bool *visited;
+    public:
+        AdjacencyMatrix(int n);
+        ~AdjacencyMatrix();
+        void add_edge(int origin, int destin, int weight);
+        void display();
+        /* etc. */
+};
+</code></pre>
+
+<p>Adjacency lists conserve more space by using lists of edges
+stored at each vertex to represent adjacencies instead of an
+n by n matrix. In an adjacency list we store a list for<br />
+each node that contains the edges for that node. Each element
+in that list represents an edge in the graph and contains
+information such as the starting and ending vertices as well
+as the edge weight. The image below illustrates this.</p>
+<p><img src="http://rosemary.umw.edu/~finlayson/class/spring13/cpsc230/notes/images/incidence.png"/></p>
+<p>Since we need to create nodes for the vertices and edges we can
+now add other useful attributes to each vertex to help us with our
+algorithms. For example, a color attribute for use with a graph
+coloring algorithm or a visited attribute for a graph traversal
+algorithm. The implementation consists of three classes; the 
+<code>Adjacency_List</code> class, the <code>Vertex</code> class and the <code>Edge</code> class. 
+If you notice in the example below, the Vertex class contains a list
+of edges and the Edge class contains a pointer to both a starting 
+and ending vertex.</p>
+<pre><code class="cpp">class Vertex{
+    private:
+        vector&lt;Edge*&gt; Adjacencys;
+        int color;
+        bool visited;
+    public:
+        Vertex();
+        ~Vertex();
+};
+
+class Edge{
+    private:
+        Vertex *from;
+        Vertex *to;
+        int weight;
+    public:
+        Edge();
+        ~Edge();
+};
+
+class AdjacencyList{
+    private:
+        vector&lt;Vertex*&gt; Vertices;
+    public:
+        Graph();
+        ~Graph();
+        void add_edge(Vertex *from, Vertex *to, int weight);
+        void add_edge(int from, int to, int weight);
+        void display();
+        /* etc. */
+};
+</code></pre>
+
+<h2 id="dfs-and-bfs">DFS and BFS</h2>
+<p>Depth First Search (DFS) and Breadth First Search (BFS) are the two
+primary search algorithms that all other algorithms use to  traverse
+a graph. A depth first search will start at the given node and add
+all of the unvisited adjacent nodes to a stack. It will then mark the current node as visited and repeat the process on the next node which it pops off of the stack. This process repeats until all of the vertices have been visited and the stack is empty. A breadth first search, on the other hand, starts at the given vertex and then adds all of its adjacent vertices to a queue. When this is complete, the algorithm marks the vertex as visited and moves on the the next vertex in the queue. It repeats this process until all of the vertices have been visited and and the queue is empty. The easiest way to remember these essential algorithms is to mentally link DFS to Stacks and BFS to Queues.</p>
+<h2 id="exercise-1">Exercise 1</h2>
+<p>Implement a Graph class using either the Adjacency Matrix or the
+Adjacency list approach. Feel free to use the code given above
+to help you get started.</p>
+<h2 id="exercise-2">Exercise 2</h2>
+<p>A cycle is any point in a graph where it is possible to travel in a
+loop. For example; there is an edge from A to B, from B to C, and
+from C back to A. Write a member function that detects whether your
+graph contains any cycles and returns true or false respectively.</p>
+<h2 id="exercise-3">Exercise 3</h2>
+<p>Write a member function that, given a starting vertex and an ending
+vertex, prints out a list of vertices that connect a path between
+them.</p>
+<h2 id="stretch-goal-exercise">Stretch-goal exercise:</h2>
+<p>Can you come up with an algorithm that finds the shortest
+path between two given vertices?</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../lec_week_09/" class="btn btn-neutral float-right" title="Lecture Week 9">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../lec_week_08/" class="btn btn-neutral" title="Lecture Week 8"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+    
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../lec_week_08/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../lec_week_09/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script src="../js/theme.js"></script>
+
+</body>
+</html>
