@@ -17,7 +17,7 @@ However in the traversal of this tree, the results `8,7,9,6` and `8,9,7,6` are b
 
 Consider the following graph:
 
-![alt-text]:(http://www.thecshandbook.com/public_html/img/uploads/graph.png)
+![alt-text](http://www.thecshandbook.com/public_html/img/uploads/graph.png)
 
 What would the BFS traversal of this graph look like if we started from node `1`? 
 
