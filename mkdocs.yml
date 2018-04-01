@@ -1,7 +1,7 @@
 site_name: "CS14 SI: Spring 2015"
 pages:
-    - Home: index.md
-    #- [index.md, "Home"]
+    #- Home: index.md
+    - [index.md, "Home"]
     - [lab_week_01.md, "Lab Week 1"]
     #- Lecture Week 2: lec_week_02.md
     #- [lec_week_02.md, "Lecture Week 2"]
